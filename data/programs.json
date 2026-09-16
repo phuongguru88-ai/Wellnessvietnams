@@ -1,0 +1,252 @@
+[
+  {
+    "id": "pr-duong-sinh",
+    "slug": "hanh-trinh-duong-sinh-3n2d",
+    "name": "Hành trình Dưỡng sinh",
+    "summary": "Ba ngày đặt lại nhịp cơ thể theo y học phương đông: bắt mạch, ăn theo tính vị, trị liệu kinh lạc mỗi chiều và một bài thuốc mang về. Dành cho người ngủ kém, hay lạnh tay chân hoặc vừa qua một giai đoạn làm việc quá tải.",
+    "description": "Hành trình được thiết kế quanh một buổi bắt mạch duy nhất diễn ra ngay khi nhận phòng — từ đó lương y lập phiếu thể trạng riêng, quyết định thực đơn, bài trị liệu kinh lạc và bài thuốc mang về của từng khách. Không có hai khách nào đi cùng một lịch trình giống hệt nhau, vì mọi điều chỉnh đều bám theo thể trạng thật chứ không theo một giáo trình cố định.",
+    "images": [
+      { "seed": "duong-sinh-1", "alt": "Buổi bắt mạch trong hành trình Dưỡng sinh" },
+      { "seed": "duong-sinh-2", "alt": "Trị liệu kinh lạc bằng cứu ngải" },
+      { "seed": "duong-sinh-3", "alt": "Vị thuốc nam phơi trên nong tre" }
+    ],
+
+    "nganh": ["Dưỡng sinh & Phòng ngừa theo Y học phương đông", "Thanh lọc cơ thể"],
+    "loaiHinh": ["Y học phương đông", "Ăn ngủ & Dinh dưỡng"],
+    "coYeuToVanHoaVungMien": true,
+    "muc": 3,
+    "mucTieu": ["Phục hồi thể lực", "Cải thiện giấc ngủ", "Thanh lọc cơ thể"],
+    "doiTuongPhuHop": [
+      "Người ngủ kém, hay lạnh tay chân",
+      "Người vừa qua một giai đoạn làm việc quá tải, cần đặt lại nhịp cơ thể",
+      "Người muốn thử một liệu trình y học cổ truyền cá nhân hoá, có bắt mạch riêng"
+    ],
+    "doiTuongKhongPhuHop": [
+      "Phụ nữ mang thai",
+      "Người mới phẫu thuật trong vòng 3 tháng",
+      "Người đang sốt cao hoặc trong đợt bệnh cấp tính"
+    ],
+
+    "durationLabel": "3 ngày 2 đêm",
+    "itinerary": [
+      {
+        "day": "Ngày 1",
+        "title": "Bắt mạch & hạ nhịp",
+        "items": [
+          "14:00 — Nhận phòng, uống trà gừng mật ong đón khách",
+          "15:30 — Bắt mạch cùng lương y, lập phiếu thể trạng và thực đơn riêng",
+          "17:00 — Ngâm chân thuốc bắc, xoa bóp vai cổ 30 phút",
+          "19:00 — Bữa tối theo tính vị, ăn xong đi bộ nhẹ trong vườn thuốc"
+        ]
+      },
+      {
+        "day": "Ngày 2",
+        "title": "Trị liệu kinh lạc",
+        "items": [
+          "06:00 — Khí công buổi sớm hướng thung lũng, 45 phút",
+          "07:30 — Cháo thuốc và trà theo phiếu thể trạng",
+          "09:00 — Trị liệu kinh lạc 90 phút: bấm huyệt, cứu ngải, giác hơi nếu phù hợp",
+          "14:00 — Hái thuốc cùng lương y, học nhận 12 vị thuốc nam thường dùng",
+          "16:30 — Xông hơi thảo mộc, nghỉ trong phòng thuốc",
+          "19:00 — Bữa tối, sau đó trà an thần trước khi ngủ"
+        ]
+      },
+      {
+        "day": "Ngày 3",
+        "title": "Bài thuốc mang về",
+        "items": [
+          "06:30 — Khí công và thở bụng 30 phút",
+          "08:00 — Bữa sáng, đọc lại phiếu thể trạng cùng lương y",
+          "09:30 — Nhận bài thuốc 14 ngày, hướng dẫn sắc thuốc và ăn uống tại nhà",
+          "11:00 — Trả phòng, tặng túi thuốc ngâm chân dùng 10 lần"
+        ]
+      }
+    ],
+    "baoGom": [
+      "2 đêm lưu trú tại Phòng Đá Nền hoặc Phòng Gỗ Thượng",
+      "Toàn bộ bữa ăn theo tính vị do bếp villa chuẩn bị",
+      "Một buổi bắt mạch riêng và phiếu thể trạng cá nhân",
+      "Trị liệu kinh lạc 90 phút và bài thuốc 14 ngày mang về"
+    ],
+    "khongBaoGom": [
+      "Di chuyển tới Villa Chàm",
+      "Đồ uống có cồn",
+      "Liệu trình phát sinh ngoài lịch trình"
+    ],
+    "propertyRef": "p-villa-cham",
+
+    "yeuCauTruocKhi": [
+      "Khai báo tiền sử bệnh lý và dị ứng thuốc trước khi tới",
+      "Nhịn ăn tối thiểu 2 giờ trước buổi bắt mạch"
+    ],
+    "chuyenMonDoiNgu": "Lương y người Dao đỏ thường trú, có giấy phép hành nghề y học cổ truyền, trực tiếp bắt mạch và trị liệu cho từng khách.",
+    "quyMoNhom": { "min": 1, "max": 2 },
+    "gioiHanCamKet": "Chỉ nhận tối đa 2 khách mỗi lượt bắt mạch để lương y theo sát trọn liệu trình, không ghép đoàn.",
+
+    "price": 6900000,
+    "priceUnit": "khách",
+    "giaTheoLoai": [
+      { "loai": "Phòng Đá Nền", "gia": 6900000 },
+      { "loai": "Phòng Gỗ Thượng", "gia": 7900000 }
+    ],
+    "chinhSachHuy": "Hoàn 100% nếu huỷ trước 7 ngày; hoàn 50% nếu huỷ trong 3–7 ngày; không hoàn nếu huỷ dưới 72 giờ, được bảo lưu một lần trong 6 tháng.",
+    "trangThai": "Đang mở bán"
+  },
+  {
+    "id": "pr-thanh-loc",
+    "slug": "thanh-loc-tinh-than-cuoi-tuan",
+    "name": "Thanh lọc Tinh thần cuối tuần",
+    "summary": "Một cuối tuần rời điện thoại: thiền hành trong núi đá, viết nhật ký có hướng dẫn và hai bữa cơm quê ăn trong im lặng. Có người đồng hành suốt hành trình, không yêu cầu kinh nghiệm thiền trước đó.",
+    "description": "Hai ngày được giữ cố định ba việc: gửi lại điện thoại, ngồi yên đủ lâu để nghe được suy nghĩ của chính mình, và ăn chậm trong im lặng. Người hướng dẫn không dạy lý thuyết thiền mà chỉ tạo khoảng lặng và đi cùng — phù hợp cho người lần đầu thử, không cần chuẩn bị gì trước ngoài việc sẵn sàng chậm lại.",
+    "images": [
+      { "seed": "thanh-loc-1", "alt": "Thiền hành quanh núi đá vôi Ninh Bình" },
+      { "seed": "thanh-loc-2", "alt": "Viết nhật ký bên hiên nhà" },
+      { "seed": "thanh-loc-3", "alt": "Đạp xe trên đường đồng Ninh Bình" }
+    ],
+
+    "nganh": ["Giảm căng thẳng & Phục hồi năng lượng", "Cân bằng cảm xúc & Chánh niệm"],
+    "loaiHinh": ["Sức khỏe tinh thần", "Thiên nhiên & Sinh thái"],
+    "coYeuToVanHoaVungMien": false,
+    "muc": 2,
+    "mucTieu": ["Giảm căng thẳng", "Cai nghiện kỹ thuật số", "Cải thiện giấc ngủ"],
+    "doiTuongPhuHop": [
+      "Người làm việc trí óc nhiều, khó tắt suy nghĩ vào cuối ngày",
+      "Người muốn thử thiền nhưng chưa từng có kinh nghiệm",
+      "Người cần một khoảng lặng thật sự, tạm rời khỏi điện thoại"
+    ],
+    "doiTuongKhongPhuHop": [
+      "Người đang điều trị trầm cảm nặng cần giám sát y tế liên tục",
+      "Người không thể tách khỏi điện thoại vì lý do công việc hoặc gia đình"
+    ],
+
+    "durationLabel": "2 ngày 1 đêm",
+    "itinerary": [
+      {
+        "day": "Ngày 1",
+        "title": "Gửi điện thoại, mở giác quan",
+        "items": [
+          "13:30 — Nhận phòng, gửi điện thoại vào hộp gỗ (tự nguyện)",
+          "15:00 — Vòng tròn mở đầu: mỗi người nói một câu về điều mình đang mang",
+          "16:30 — Thiền hành 90 phút quanh chân núi đá vôi",
+          "18:30 — Bữa tối ăn trong im lặng, nghe tiếng đầm sen",
+          "20:00 — Viết nhật ký có hướng dẫn bên hiên, trà hoa cúc"
+        ]
+      },
+      {
+        "day": "Ngày 2",
+        "title": "Mang sự tĩnh về nhà",
+        "items": [
+          "05:30 — Ngồi yên đón sáng ngoài hiên, 40 phút",
+          "07:00 — Bữa sáng cơm quê, bắt đầu nói chuyện lại",
+          "08:30 — Đạp xe đồng 10km, dừng ở chùa làng",
+          "10:30 — Vòng tròn kết: chọn một việc nhỏ giữ lại khi về thành phố",
+          "11:30 — Nhận lại điện thoại, trả phòng"
+        ]
+      }
+    ],
+    "baoGom": [
+      "1 đêm lưu trú tại Nhà Dó",
+      "Hai bữa cơm quê nấu theo lối ăn nhạt",
+      "Người hướng dẫn đồng hành toàn bộ hành trình",
+      "Sổ tay viết nhật ký tặng kèm"
+    ],
+    "khongBaoGom": [
+      "Di chuyển tới Ninh Bình",
+      "Bữa ăn ngoài lịch trình",
+      "Đồ uống có cồn"
+    ],
+    "propertyRef": "p-nha-do",
+
+    "yeuCauTruocKhi": [
+      "Sẵn sàng gửi điện thoại trong thời gian diễn ra hành trình (tự nguyện)",
+      "Không yêu cầu kinh nghiệm thiền trước đó"
+    ],
+    "chuyenMonDoiNgu": "Người hướng dẫn thiền được đào tạo bài bản, đồng hành trực tiếp xuyên suốt hai ngày, không phụ trách quá 8 khách mỗi lượt.",
+    "quyMoNhom": { "min": 2, "max": 8 },
+    "gioiHanCamKet": "Chỉ tổ chức khi đủ tối thiểu 2 khách đăng ký cho mỗi lượt cuối tuần, tối đa 8 khách để giữ không khí yên tĩnh.",
+
+    "price": 3200000,
+    "priceUnit": "khách",
+    "chinhSachHuy": "Hoàn 100% nếu huỷ trước 5 ngày; hoàn 50% nếu huỷ trong 2–5 ngày; không hoàn nếu huỷ dưới 48 giờ.",
+    "trangThai": "Theo mùa"
+  },
+  {
+    "id": "pr-tan-hon",
+    "slug": "tron-goi-tan-hon-an-yen",
+    "name": "Trọn gói Tân hôn An yên",
+    "summary": "Gói dành cho hai người: phòng hướng biển, spa đôi trầm hương, bữa tối riêng trên bãi và bữa sáng dọn vào phòng. Mọi tiện nghi đã sắp sẵn — hai bạn tự dùng theo nhịp của mình, không có lịch trình phải theo.",
+    "description": "Không có người hướng dẫn đi cùng, không có mốc giờ bắt buộc — gói chỉ chuẩn bị sẵn không gian và dịch vụ để hai người tự quyết định nhịp độ của mình. Phù hợp cho cặp đôi mới cưới hoặc muốn tái hiện không khí tân hôn nhân một dịp kỷ niệm, khi điều cần nhất chỉ là thời gian riêng không bị gián đoạn.",
+    "images": [
+      { "seed": "tan-hon-1", "alt": "Phòng hướng biển cho gói Tân hôn An yên" },
+      { "seed": "tan-hon-2", "alt": "Spa đôi trầm hương" },
+      { "seed": "tan-hon-3", "alt": "Bữa tối riêng trên bãi biển Phú Yên" }
+    ],
+
+    "nganh": ["Làm đẹp & Thư giãn"],
+    "loaiHinh": ["Spa & Làm đẹp", "Ăn ngủ & Dinh dưỡng"],
+    "coYeuToVanHoaVungMien": false,
+    "muc": 1,
+    "mucTieu": ["Gắn kết đôi lứa & gia đình", "Giảm căng thẳng"],
+    "doiTuongPhuHop": [
+      "Cặp đôi mới cưới muốn một kỳ nghỉ riêng tư, không lịch trình cố định",
+      "Cặp đôi kỷ niệm ngày cưới muốn tái hiện không khí tân hôn"
+    ],
+    "doiTuongKhongPhuHop": [
+      "Nhóm bạn hoặc gia đình đông người — gói chỉ phục vụ đúng 2 khách",
+      "Khách cần lịch trình có hướng dẫn viên đi cùng"
+    ],
+
+    "durationLabel": "2 ngày 1 đêm",
+    "itinerary": [
+      {
+        "day": "Ngày 1",
+        "title": "Nhận phòng & spa đôi",
+        "items": [
+          "14:00 — Nhận phòng hướng biển, hoa tươi và trà trầm sẵn trong phòng",
+          "Tự chọn giờ — Spa đôi trầm hương 90 phút trong phòng trị liệu riêng",
+          "Tự chọn giờ — Bơi ở bãi riêng hoặc nằm đọc ở hiên phòng",
+          "19:00 — Bữa tối riêng 5 món trên bãi, có đèn bão và nhạc mộc"
+        ]
+      },
+      {
+        "day": "Ngày 2",
+        "title": "Sáng chậm",
+        "items": [
+          "Tự chọn giờ — Bữa sáng dọn vào phòng, gọi trước 30 phút",
+          "Tự chọn giờ — Xông hơi trầm và bể sục ở khu spa",
+          "12:00 — Trả phòng muộn, tặng bộ tinh dầu trầm mang về"
+        ]
+      }
+    ],
+    "baoGom": [
+      "1 đêm tại Phòng Vịnh hướng biển",
+      "Spa đôi trầm hương 90 phút",
+      "Bữa tối riêng 5 món trên bãi biển",
+      "Bữa sáng dọn tận phòng"
+    ],
+    "khongBaoGom": [
+      "Di chuyển tới Resort Trầm",
+      "Nâng cấp lên Suite Trầm Hương hoặc Villa Đôi",
+      "Ảnh cưới/quay phim (đặt riêng qua lễ tân)"
+    ],
+    "propertyRef": "p-resort-tram",
+
+    "yeuCauTruocKhi": [
+      "Báo trước giờ dùng bữa tối riêng ít nhất 24 giờ để chuẩn bị bãi biển",
+      "Khai báo dị ứng tinh dầu nếu có trước buổi spa đôi"
+    ],
+    "chuyenMonDoiNgu": "Kỹ thuật viên spa trầm hương được đào tạo tại resort, phục vụ theo cặp trong phòng trị liệu riêng.",
+    "quyMoNhom": { "min": 2, "max": 2 },
+    "gioiHanCamKet": "Chỉ phục vụ đúng 2 khách mỗi lượt đặt, không ghép thêm khách hoặc mở rộng theo nhóm.",
+
+    "price": 4500000,
+    "priceUnit": "cặp",
+    "giaTheoLoai": [
+      { "loai": "Phòng Vịnh", "gia": 4500000 },
+      { "loai": "Suite Trầm Hương", "gia": 6200000 },
+      { "loai": "Villa Đôi", "gia": 8900000 }
+    ],
+    "chinhSachHuy": "Hoàn 100% nếu huỷ trước 10 ngày; hoàn 50% nếu huỷ trong 5–10 ngày; không hoàn nếu huỷ dưới 5 ngày do đã đặt bãi biển riêng.",
+    "trangThai": "Đang mở bán"
+  }
+]

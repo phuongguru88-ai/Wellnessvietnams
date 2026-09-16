@@ -1,0 +1,90 @@
+[
+  {
+    "id": "e-bam-huyet",
+    "slug": "bam-huyet-co-truyen-60-phut",
+    "name": "Bấm huyệt cổ truyền",
+    "nganh": "Dưỡng sinh & Phòng ngừa theo Y học phương đông",
+    "loaiHinh": "Y học phương đông",
+    "coYeuToVanHoaVungMien": true,
+    "muc": 2,
+    "durationMinutes": 60,
+    "description": "Một giờ bấm huyệt theo đường kinh lạc, tập trung vùng vai cổ và lưng trên — nơi người làm việc bàn giấy dồn ứ nhiều nhất. Kỹ thuật viên hỏi thể trạng và vùng đau trước khi bắt đầu, dùng lực theo phản hồi của khách chứ không theo bài cố định.",
+    "benefits": [
+      "Giảm căng cứng vai cổ sau thời gian dài ngồi máy tính",
+      "Dễ vào giấc hơn trong 2–3 đêm sau buổi trị liệu",
+      "Không dùng dầu nóng, phù hợp cả người da nhạy cảm"
+    ],
+    "images": [
+      { "seed": "bam-huyet-1", "alt": "Bấm huyệt vùng vai cổ theo đường kinh lạc" },
+      { "seed": "bam-huyet-2", "alt": "Phòng trị liệu y học phương đông" }
+    ],
+    "price": 650000,
+    "propertyRef": "p-villa-cham"
+  },
+  {
+    "id": "e-da-nong",
+    "slug": "massage-da-nong-90-phut",
+    "name": "Massage đá nóng",
+    "nganh": "Làm đẹp & Thư giãn",
+    "loaiHinh": "Spa & Làm đẹp",
+    "coYeuToVanHoaVungMien": false,
+    "muc": 2,
+    "durationMinutes": 90,
+    "description": "Đá bazan hơ nóng 52–55°C đặt dọc sống lưng và lòng bàn chân, kết hợp xoa bóp dầu trầm hương ấm. Hơi nóng đi sâu làm mềm cơ trước khi kỹ thuật viên xử lý các điểm co cứng, nên chịu lực dễ hơn massage thường.",
+    "benefits": [
+      "Làm mềm cơ sâu, phù hợp người tập luyện nặng hoặc đi lại nhiều",
+      "Ấm người rõ rệt, tốt cho người hay lạnh tay chân",
+      "Dầu trầm hương bản địa, lưu hương nhẹ đến sáng hôm sau"
+    ],
+    "images": [
+      { "seed": "da-nong-1", "alt": "Đá bazan hơ nóng dùng cho massage" },
+      { "seed": "da-nong-2", "alt": "Phòng spa trầm hương hướng biển" }
+    ],
+    "price": 850000,
+    "propertyRef": "p-resort-tram"
+  },
+  {
+    "id": "e-coaching",
+    "slug": "coaching-1-kem-1-45-phut",
+    "name": "Coaching 1-kèm-1",
+    "nganh": "Cân bằng cảm xúc & Chánh niệm",
+    "loaiHinh": "Sức khỏe tinh thần",
+    "coYeuToVanHoaVungMien": false,
+    "muc": 3,
+    "durationMinutes": 45,
+    "description": "Buổi làm việc riêng với nhà tâm lý có chứng chỉ hành nghề, dành cho người đang mắc ở một quyết định lớn hoặc kiệt sức vì công việc. Buổi đầu dùng để nhìn rõ vấn đề và thống nhất hướng đi; nếu cần, khách có thể tiếp tục theo liệu trình 4–6 buổi.",
+    "benefits": [
+      "Nhà tâm lý có giấy phép hành nghề, bảo mật theo quy tắc nghề nghiệp",
+      "Có thể làm tại phòng riêng hướng biển hoặc đi bộ ngoài trời",
+      "Nhận trước bảng câu hỏi để buổi gặp vào việc ngay"
+    ],
+    "images": [
+      { "seed": "coaching-1", "alt": "Phòng tham vấn tâm lý hướng biển" },
+      { "seed": "coaching-2", "alt": "Buổi coaching đi bộ ngoài trời" }
+    ],
+    "price": 1200000,
+    "propertyRef": "p-resort-tram"
+  },
+  {
+    "id": "e-forest-bathing",
+    "slug": "forest-bathing-co-huong-dan",
+    "name": "Forest bathing có hướng dẫn",
+    "nganh": "Giảm căng thẳng & Phục hồi năng lượng",
+    "loaiHinh": "Thiên nhiên & Sinh thái",
+    "coYeuToVanHoaVungMien": true,
+    "muc": 2,
+    "durationMinutes": 180,
+    "description": "Ba giờ đi rất chậm trong rừng thứ sinh quanh núi đá vôi — cả buổi chỉ đi khoảng 2km. Người hướng dẫn dẫn qua chuỗi bài tập mở giác quan: nghe tầng âm của rừng, chạm vỏ cây, nếm lá bản địa ăn được, và một khoảng ngồi yên 20 phút không nói.",
+    "benefits": [
+      "Không cần thể lực, phù hợp cả người lớn tuổi",
+      "Nhận biết 15–20 loài cây bản địa và công dụng dân gian",
+      "Kết buổi bằng trà lá rừng hái tại chỗ"
+    ],
+    "images": [
+      { "seed": "forest-1", "alt": "Rừng thứ sinh quanh núi đá vôi Ninh Bình" },
+      { "seed": "forest-2", "alt": "Trà lá rừng hái tại chỗ" }
+    ],
+    "price": 450000,
+    "propertyRef": "p-nha-do"
+  }
+]

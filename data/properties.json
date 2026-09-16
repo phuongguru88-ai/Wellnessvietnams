@@ -1,0 +1,683 @@
+[
+  {
+    "id": "p-villa-cham",
+    "slug": "villa-cham-ha-giang",
+    "name": "Villa Chàm",
+    "type": "Villa",
+    "region": "Hà Giang",
+    "description": "Villa Chàm nằm lưng thung lũng đá vôi Hà Giang, dựng bằng đá và gỗ địa phương, quay mặt về hướng sương sớm. Nơi đây vận hành như một nhà thuốc có phòng ngủ: bếp nấu theo tính vị, vườn thuốc nam tự trồng, và phòng trị liệu do lương y người Dao đỏ phụ trách. Mọi liệu trình đều bắt đầu bằng một buổi bắt mạch — thực đơn và bài thuốc của mỗi khách vì thế không giống nhau.",
+    "highlights": [
+      "Lương y người Dao đỏ thường trú, bắt mạch cho mỗi khách khi nhận phòng",
+      "Vườn thuốc nam 2.000m2 tự trồng, dùng trực tiếp cho bài thuốc và bếp",
+      "Bếp nấu theo tính vị — thực đơn điều chỉnh theo thể trạng từng khách",
+      "Chỉ 6 phòng, không tiếp khách đoàn"
+    ],
+    "nganh": [
+      "Thanh lọc cơ thể",
+      "Dưỡng sinh & Phòng ngừa theo Y học phương đông"
+    ],
+    "loaiHinh": [
+      "Thiên nhiên & Sinh thái",
+      "Y học phương đông"
+    ],
+    "coYeuToVanHoaVungMien": true,
+    "mucCaoNhat": 3,
+    "giaThamKhao": 2200000,
+    "giaUnit": "đêm",
+    "trangThai": "Đang nhận khách",
+    "images": [
+      {
+        "seed": "villa-cham-ha-giang-1",
+        "alt": "Villa Chàm giữa thung lũng đá Hà Giang",
+        "kind": "video",
+        "src": "https://www.youtube.com/embed/BmbbGdYwkek",
+        "thumbnailSrc": "https://img.youtube.com/vi/BmbbGdYwkek/hqdefault.jpg"
+      },
+      {
+        "seed": "villa-cham-ha-giang-2",
+        "alt": "Phòng trị liệu y học phương đông tại Villa Chàm",
+        "kind": "video",
+        "src": "https://www.youtube.com/embed/BmbbGdYwkek",
+        "thumbnailSrc": "https://img.youtube.com/vi/BmbbGdYwkek/hqdefault.jpg"
+      },
+      {
+        "seed": "villa-cham-ha-giang-3",
+        "alt": "Vườn thuốc nam trong khuôn viên Villa Chàm",
+        "kind": "video",
+        "src": "https://www.youtube.com/embed/BmbbGdYwkek",
+        "thumbnailSrc": "https://img.youtube.com/vi/BmbbGdYwkek/hqdefault.jpg"
+      },
+      {
+        "seed": "villa-cham-ha-giang-4",
+        "alt": "Ảnh toàn cảnh",
+        "kind": "video",
+        "src": "https://www.youtube.com/embed/BmbbGdYwkek",
+        "thumbnailSrc": "https://img.youtube.com/vi/BmbbGdYwkek/hqdefault.jpg"
+      },
+      {
+        "seed": "villa-cham-ha-giang-5",
+        "alt": "Villa Chàm",
+        "kind": "video",
+        "src": "https://www.youtube.com/embed/BmbbGdYwkek",
+        "thumbnailSrc": "https://img.youtube.com/vi/BmbbGdYwkek/hqdefault.jpg"
+      },
+      {
+        "seed": "villa-cham-ha-giang-6",
+        "alt": "Villa Chàm",
+        "kind": "video",
+        "src": "https://www.youtube.com/embed/BmbbGdYwkek",
+        "thumbnailSrc": "https://img.youtube.com/vi/BmbbGdYwkek/hqdefault.jpg"
+      },
+      {
+        "seed": "villa-cham-ha-giang-7",
+        "alt": "Villa Chàm",
+        "kind": "video",
+        "src": "https://www.youtube.com/embed/BmbbGdYwkek",
+        "thumbnailSrc": "https://img.youtube.com/vi/BmbbGdYwkek/hqdefault.jpg"
+      }
+    ],
+    "roomTypes": [
+      {
+        "id": "phong-da-nen",
+        "name": "Phòng Đá Nền",
+        "sucChua": 2,
+        "dienTich": "22 m²",
+        "giaThamKhao": 2200000,
+        "giaUnit": "đêm",
+        "soLuong": 3,
+        "description": "Phòng trệt ốp đá bản địa, nằm sát vườn thuốc nam nên mở cửa sổ là nghe mùi lá thuốc. Bài trí tối giản: một giường gỗ, một bàn trà nhỏ, không có gì khác để mắt phải bận tâm.",
+        "images": [
+          {
+            "seed": "phong-da-nen-img-1",
+            "alt": "Giường gỗ trong Phòng Đá Nền nhìn ra vườn thuốc nam"
+          },
+          {
+            "seed": "phong-da-nen-img-2",
+            "alt": "Bồn tắm gỗ ngâm thuốc nam tại Phòng Đá Nền"
+          },
+          {
+            "seed": "phong-da-nen-img-3",
+            "alt": "Vách đá bản địa ốp tường Phòng Đá Nền"
+          }
+        ],
+        "tieuChuan": [
+          "Giường đôi, vách đá tự nhiên giữ nhiệt quanh năm",
+          "Bồn tắm gỗ ngâm thuốc nam pha theo bài thuốc bắt mạch riêng",
+          "Không TV, đèn muối hồng, nước nóng năng lượng mặt trời"
+        ]
+      },
+      {
+        "id": "phong-go-thuong",
+        "name": "Phòng Gỗ Thượng",
+        "sucChua": 2,
+        "dienTich": "30 m²",
+        "giaThamKhao": 2800000,
+        "giaUnit": "đêm",
+        "soLuong": 3,
+        "description": "Phòng tầng trên rộng nhất villa, toàn bộ khung bằng gỗ nghiến cũ, cửa sổ kéo dài hết một mặt tường để đón trọn thung lũng đá vôi lúc sáng sớm. Là phòng lương y hay chọn để bắt mạch vì ánh sáng tự nhiên tốt nhất nhà.",
+        "images": [
+          {
+            "seed": "phong-go-thuong-img-1",
+            "alt": "Cửa sổ lớn Phòng Gỗ Thượng nhìn thung lũng đá vôi"
+          },
+          {
+            "seed": "phong-go-thuong-img-2",
+            "alt": "Lò sưởi củi trong Phòng Gỗ Thượng"
+          },
+          {
+            "seed": "phong-go-thuong-img-3",
+            "alt": "Bàn trà nơi bắt mạch buổi sáng tại Phòng Gỗ Thượng"
+          }
+        ],
+        "tieuChuan": [
+          "Tầng trên, cửa sổ lớn nhìn thẳng thung lũng đá vôi",
+          "Bồn tắm đá riêng, lò sưởi củi dùng vào mùa lạnh",
+          "Bàn trà riêng — nơi lương y bắt mạch buổi sáng cho khách phòng này"
+        ]
+      }
+    ],
+    "tienIch": [
+      "Wifi miễn phí toàn khu",
+      "Bãi đỗ xe riêng trong khuôn viên",
+      "Đưa đón từ thị trấn Đồng Văn theo yêu cầu (phụ phí)",
+      "Bếp phục vụ ba bữa theo tính vị, đã gồm trong giá phòng",
+      "Vườn thuốc nam mở cửa cho khách tham quan tự do"
+    ],
+    "diemDenLanCan": [
+      {
+        "ten": "Phố cổ Đồng Văn",
+        "khoangCach": "10 phút lái xe"
+      },
+      {
+        "ten": "Chợ phiên Đồng Văn (sáng Chủ nhật)",
+        "khoangCach": "10 phút lái xe"
+      },
+      {
+        "ten": "Đèo Mã Pí Lèng",
+        "khoangCach": "18 km"
+      },
+      {
+        "ten": "Cột cờ Lũng Cú",
+        "khoangCach": "25 km"
+      }
+    ],
+    "thanhToan": {
+      "vietQrBankAccount": "9704 xxxx xxxx 1234 - Ngân hàng ABC (VietinBank)"
+    }
+  },
+  {
+    "id": "p-nha-do",
+    "slug": "nha-do-ninh-binh",
+    "name": "Nhà Dó",
+    "type": "Home",
+    "region": "Ninh Bình",
+    "images": [
+      {
+        "seed": "nha-do-1",
+        "alt": "Nhà Dó nhìn ra đầm sen Ninh Bình"
+      },
+      {
+        "seed": "nha-do-2",
+        "alt": "Bàn ăn cơm quê tại Nhà Dó"
+      },
+      {
+        "seed": "nha-do-3",
+        "alt": "Lối đi giữa núi đá vôi quanh Nhà Dó"
+      }
+    ],
+    "description": "Nhà Dó là nếp nhà ba gian cũ được giữ nguyên cột gỗ, mở thêm hiên rộng nhìn ra đầm sen và dãy núi đá vôi Ninh Bình. Chủ nhà nấu cơm ba bữa bằng rau tự trồng và cá đầm, theo lối ăn nhạt — ít dầu, ít đường, nhiều rau luộc và canh. Khách ở đây để ngủ đủ giấc, ăn đúng bữa và đi bộ trong làng: một tuần ở Nhà Dó không có gì để làm, và đó là chủ ý.",
+    "highlights": [
+      "Cơm ba bữa nấu theo lối ăn nhạt, nguyên liệu trong bán kính 5km",
+      "Chủ nhà đi cùng khách các buổi đi bộ làng và đạp xe đồng",
+      "Không TV trong phòng, đèn phòng ngủ ấm dưới 2.700K",
+      "Đầm sen riêng, mùa sen từ tháng 5 đến tháng 8"
+    ],
+    "nganh": [
+      "Giảm căng thẳng & Phục hồi năng lượng",
+      "Cải thiện giấc ngủ"
+    ],
+    "loaiHinh": [
+      "Ăn ngủ & Dinh dưỡng",
+      "Thiên nhiên & Sinh thái"
+    ],
+    "coYeuToVanHoaVungMien": false,
+    "mucCaoNhat": 2,
+    "giaThamKhao": 950000,
+    "giaUnit": "đêm",
+    "trangThai": "Đang nhận khách",
+    "roomTypes": [
+      {
+        "id": "phong-vuon",
+        "name": "Phòng Vườn",
+        "sucChua": 2,
+        "dienTich": "18 m²",
+        "giaThamKhao": 950000,
+        "giaUnit": "đêm",
+        "soLuong": 2,
+        "description": "Phòng nhỏ nhất nhà, ngay cạnh bếp, cửa sổ mở thẳng ra luống rau chủ nhà trồng mỗi ngày. Giữ nguyên nền gạch cũ và cột gỗ ba gian, không sửa lại theo lối hiện đại.",
+        "images": [
+          {
+            "seed": "phong-vuon-1",
+            "alt": "Phòng Vườn nhìn ra luống rau nhà trồng tại Nhà Dó"
+          },
+          {
+            "seed": "phong-vuon-2",
+            "alt": "Cột gỗ ba gian giữ nguyên trong Phòng Vườn"
+          }
+        ],
+        "tieuChuan": [
+          "Giường đôi, cửa sổ nhìn thẳng vườn rau nhà trồng",
+          "Chăn bông thủ công, đèn ấm dưới 2.700K",
+          "Không TV trong phòng"
+        ]
+      },
+      {
+        "id": "phong-dam-sen",
+        "name": "Phòng Đầm Sen",
+        "sucChua": 3,
+        "dienTich": "24 m²",
+        "giaThamKhao": 1350000,
+        "giaUnit": "đêm",
+        "soLuong": 2,
+        "description": "Phòng góc nhà, có hiên riêng bắc ghế mây nhìn thẳng ra đầm sen và dãy núi đá vôi phía xa. Mùa sen nở, cửa mở là thấy hoa; mùa còn lại là mặt nước phẳng và tiếng chim.",
+        "images": [
+          {
+            "seed": "phong-dam-sen-1",
+            "alt": "Hiên riêng Phòng Đầm Sen nhìn ra đầm sen và núi đá vôi"
+          },
+          {
+            "seed": "phong-dam-sen-2",
+            "alt": "Giường phụ trong Phòng Đầm Sen cho khách thứ ba"
+          }
+        ],
+        "tieuChuan": [
+          "Hiên riêng nhìn ra đầm sen, có thêm giường phụ cho khách thứ ba",
+          "Bàn trà sen — tự hái và pha buổi sáng cùng chủ nhà",
+          "Gần bếp chung, tiện giờ ăn cơm ba bữa"
+        ]
+      }
+    ],
+    "tienIch": [
+      "Wifi khu vực nhà chính",
+      "Bãi đỗ xe ô tô trong sân",
+      "Cho mượn xe đạp miễn phí",
+      "Cơm ba bữa đã gồm trong giá phòng",
+      "Đưa đón ga Ninh Bình theo yêu cầu (phụ phí)"
+    ],
+    "diemDenLanCan": [
+      {
+        "ten": "Tam Cốc – Bích Động",
+        "khoangCach": "3 km"
+      },
+      {
+        "ten": "Hang Múa",
+        "khoangCach": "4 km"
+      },
+      {
+        "ten": "Cố đô Hoa Lư",
+        "khoangCach": "8 km"
+      },
+      {
+        "ten": "Chùa Bái Đính",
+        "khoangCach": "12 km"
+      }
+    ],
+    "thanhToan": {
+      "vietQrBankAccount": "9704 xxxx xxxx 5678 - Ngân hàng ABC (Vietcombank)"
+    }
+  },
+  {
+    "id": "p-resort-tram",
+    "slug": "resort-tram-phu-yen",
+    "name": "Resort Trầm",
+    "type": "Resort",
+    "region": "Phú Yên",
+    "images": [
+      {
+        "seed": "resort-tram-1",
+        "alt": "Resort Trầm bên vịnh biển Phú Yên"
+      },
+      {
+        "seed": "resort-tram-2",
+        "alt": "Khu spa trầm hương tại Resort Trầm"
+      },
+      {
+        "seed": "resort-tram-3",
+        "alt": "Phòng tham vấn tâm lý hướng biển"
+      }
+    ],
+    "description": "Resort Trầm mở ra một vịnh nhỏ ở Phú Yên, lấy trầm hương bản địa làm trục hương cho toàn bộ trải nghiệm — từ phòng xông, dầu massage đến trà chiều. Khu spa 900m2 vận hành cùng một tổ chuyên gia gồm kỹ thuật viên trị liệu và nhà tâm lý có giấy phép hành nghề, nên khách có thể đi từ một buổi massage đá nóng đến một liệu trình tham vấn nhiều buổi trong cùng kỳ nghỉ.",
+    "highlights": [
+      "Nhà tâm lý có chứng chỉ hành nghề, nhận tham vấn theo liệu trình",
+      "Spa trầm hương 900m2, 11 phòng trị liệu, có phòng đôi cho cặp",
+      "Bãi tắm riêng dốc thoải, an toàn cho bơi sớm",
+      "Trà chiều trầm hương miễn phí cho khách lưu trú"
+    ],
+    "nganh": [
+      "Làm đẹp & Thư giãn",
+      "Cân bằng cảm xúc & Chánh niệm"
+    ],
+    "loaiHinh": [
+      "Spa & Làm đẹp",
+      "Sức khỏe tinh thần"
+    ],
+    "coYeuToVanHoaVungMien": false,
+    "mucCaoNhat": 3,
+    "giaThamKhao": 3200000,
+    "giaUnit": "đêm",
+    "trangThai": "Đang nhận khách",
+    "roomTypes": [
+      {
+        "id": "phong-vinh",
+        "name": "Phòng Vịnh",
+        "sucChua": 2,
+        "dienTich": "32 m²",
+        "giaThamKhao": 3200000,
+        "giaUnit": "đêm",
+        "soLuong": 6,
+        "description": "Hạng phòng tiêu chuẩn của resort, toàn bộ dãy phòng quay mặt ra vịnh nên phòng nào cũng có ban công riêng. Nội thất gỗ sáng màu, mùi trầm hương pha nhẹ từ bồn tắm.",
+        "images": [
+          {
+            "seed": "phong-vinh-1",
+            "alt": "Ban công Phòng Vịnh hướng ra biển Resort Trầm"
+          },
+          {
+            "seed": "phong-vinh-2",
+            "alt": "Bồn tắm pha dầu trầm hương tại Phòng Vịnh"
+          },
+          {
+            "seed": "phong-vinh-3",
+            "alt": "Góc trà chiều trong Phòng Vịnh"
+          }
+        ],
+        "tieuChuan": [
+          "Ban công riêng hướng vịnh, bồn tắm pha dầu trầm hương",
+          "Trà chiều trầm hương phục vụ tại phòng",
+          "Nước nóng năng lượng mặt trời, minibar đồ uống thảo mộc"
+        ]
+      },
+      {
+        "id": "suite-tram-huong",
+        "name": "Suite Trầm Hương",
+        "sucChua": 2,
+        "dienTich": "45 m²",
+        "giaThamKhao": 4600000,
+        "giaUnit": "đêm",
+        "soLuong": 3,
+        "description": "Suite tách hẳn khỏi dãy phòng chính, có buồng xông trầm hương riêng nên khách không phải di chuyển sang khu spa chung. Phù hợp khách muốn một kỳ nghỉ kín đáo, ít gặp người khác.",
+        "images": [
+          {
+            "seed": "suite-tram-huong-1",
+            "alt": "Phòng khách Suite Trầm Hương nhìn ra vịnh"
+          },
+          {
+            "seed": "suite-tram-huong-2",
+            "alt": "Buồng xông trầm hương riêng trong Suite Trầm Hương"
+          },
+          {
+            "seed": "suite-tram-huong-3",
+            "alt": "Lối đi riêng từ Suite Trầm Hương xuống bãi tắm"
+          }
+        ],
+        "tieuChuan": [
+          "Phòng xông trầm hương riêng ngay trong suite",
+          "Lối đi riêng xuống bãi tắm, không qua sảnh chung",
+          "Ưu tiên đặt lịch spa và tham vấn tâm lý trong ngày"
+        ]
+      },
+      {
+        "id": "villa-doi",
+        "name": "Villa Đôi",
+        "sucChua": 4,
+        "dienTich": "60 m²",
+        "giaThamKhao": 6900000,
+        "giaUnit": "đêm",
+        "soLuong": 2,
+        "description": "Villa độc lập lớn nhất resort, tách khỏi khu phòng chính bằng một hàng rào cây dâm bụt. Hai phòng ngủ quay hai hướng khác nhau nên hai cặp đi cùng vẫn có khoảng riêng.",
+        "images": [
+          {
+            "seed": "villa-doi-1",
+            "alt": "Villa Đôi nhìn từ bể sục ngoài trời"
+          },
+          {
+            "seed": "villa-doi-2",
+            "alt": "Một trong hai phòng ngủ của Villa Đôi"
+          },
+          {
+            "seed": "villa-doi-3",
+            "alt": "Phòng khách chung của Villa Đôi"
+          }
+        ],
+        "tieuChuan": [
+          "Hai phòng ngủ và phòng khách riêng — hợp gia đình hoặc hai cặp đi cùng",
+          "Bể sục riêng ngoài trời nhìn ra vịnh",
+          "Bếp nhỏ pha trà, tủ lạnh riêng"
+        ]
+      }
+    ],
+    "tienIch": [
+      "Wifi miễn phí toàn resort",
+      "Hồ bơi nước mặn nhìn ra vịnh",
+      "Nhà hàng phục vụ hải sản theo mùa",
+      "Đưa đón sân bay Tuy Hòa theo yêu cầu (phụ phí)",
+      "Giữ trẻ theo yêu cầu (phụ phí)"
+    ],
+    "diemDenLanCan": [
+      {
+        "ten": "Bãi Xép",
+        "khoangCach": "6 km"
+      },
+      {
+        "ten": "Chợ Tuy Hòa",
+        "khoangCach": "9 km"
+      },
+      {
+        "ten": "Gành Đá Đĩa",
+        "khoangCach": "14 km"
+      },
+      {
+        "ten": "Sân bay Tuy Hòa",
+        "khoangCach": "20 km"
+      }
+    ],
+    "thanhToan": {
+      "vietQrBankAccount": "9704 xxxx xxxx 9012 - Ngân hàng ABC (BIDV)"
+    }
+  },
+  {
+    "id": "p-rung-thien",
+    "slug": "rung-thien-da-lat",
+    "name": "Rừng Thiền",
+    "type": "Retreat",
+    "region": "Đà Lạt",
+    "images": [
+      {
+        "seed": "rung-thien-1",
+        "alt": "Thiền đường gỗ giữa rừng thông Rừng Thiền Đà Lạt"
+      },
+      {
+        "seed": "rung-thien-2",
+        "alt": "Lối đi thiền hành quanh hồ nước tại Rừng Thiền"
+      },
+      {
+        "seed": "rung-thien-3",
+        "alt": "Cabin cá nhân không wifi giữa rừng thông"
+      }
+    ],
+    "description": "Rừng Thiền nằm khuất trong một vạt rừng thông ở ngoại ô Đà Lạt, dựng thành mười cabin gỗ tách biệt quanh một thiền đường chung và hồ nước nhỏ. Lịch trình mỗi ngày cố định giờ ngồi thiền, ăn chay và thiền hành, do một thiền sư thường trú hướng dẫn theo truyền thống Làng Mai. Không wifi trong cabin, không lịch trình tự chọn — khách đăng ký theo khoá dài ngày, không nhận khách lưu trú lẻ.",
+    "highlights": [
+      "Thiền sư thường trú hướng dẫn theo truyền thống Làng Mai, hai buổi ngồi thiền mỗi ngày",
+      "Ăn chay thanh đạm hoàn toàn từ nông trại hữu cơ tại chỗ",
+      "Cabin đơn không điện thoại, không wifi, đèn dầu buổi tối",
+      "Chỉ nhận khách theo khoá 3 hoặc 7 ngày, không lưu trú lẻ"
+    ],
+    "nganh": [
+      "Cân bằng cảm xúc & Chánh niệm",
+      "Giảm căng thẳng & Phục hồi năng lượng"
+    ],
+    "loaiHinh": [
+      "Sức khỏe tinh thần",
+      "Thiên nhiên & Sinh thái"
+    ],
+    "coYeuToVanHoaVungMien": false,
+    "mucCaoNhat": 3,
+    "giaThamKhao": 2600000,
+    "giaUnit": "đêm",
+    "trangThai": "Đang nhận khách",
+    "roomTypes": [
+      {
+        "id": "cabin-don",
+        "name": "Cabin Đơn",
+        "sucChua": 1,
+        "dienTich": "16 m²",
+        "giaThamKhao": 2600000,
+        "giaUnit": "đêm",
+        "soLuong": 6,
+        "description": "Cabin dựng cách nhau đủ xa để không nghe tiếng cabin bên cạnh, mỗi cabin một cửa sổ nhỏ nhìn thẳng vào thân thông. Đúng thiết kế cho một người, không có chỗ cho vali cồng kềnh.",
+        "images": [
+          {
+            "seed": "cabin-don-1",
+            "alt": "Cabin Đơn giữa rừng thông tại Rừng Thiền"
+          },
+          {
+            "seed": "cabin-don-2",
+            "alt": "Bàn thiền nhỏ và đèn dầu trong Cabin Đơn"
+          }
+        ],
+        "tieuChuan": [
+          "Giường đơn, bàn thiền nhỏ, không điện thoại trong cabin",
+          "Đèn dầu buổi tối, chăn len thủ công",
+          "Không wifi — đúng tinh thần khoá tu tách biệt"
+        ]
+      },
+      {
+        "id": "cabin-doi",
+        "name": "Cabin Đôi",
+        "sucChua": 2,
+        "dienTich": "20 m²",
+        "giaThamKhao": 3200000,
+        "giaUnit": "đêm",
+        "soLuong": 4,
+        "description": "Cabin rộng hơn một chút để đặt được hai giường đơn tách biệt — thiền viện không sắp giường đôi kể cả cho các cặp đi cùng, giữ đúng nếp một mình một chỗ ngồi thiền.",
+        "images": [
+          {
+            "seed": "cabin-doi-1",
+            "alt": "Hai giường đơn tách biệt trong Cabin Đôi"
+          },
+          {
+            "seed": "cabin-doi-2",
+            "alt": "Cửa sổ Cabin Đôi nhìn vạt rừng thông"
+          }
+        ],
+        "tieuChuan": [
+          "Hai giường đơn tách biệt, không chung giường — giữ đúng nếp khoá tu",
+          "Bàn thiền chung cho hai người, không wifi",
+          "Cửa sổ nhìn thẳng vạt rừng thông"
+        ]
+      }
+    ],
+    "tienIch": [
+      "Nước nóng năng lượng mặt trời toàn khu",
+      "Bếp chay phục vụ ba bữa theo giờ cố định, đã gồm trong giá phòng",
+      "Đưa đón sân bay Liên Khương theo yêu cầu (phụ phí)",
+      "Thư viện sách thiền tại nhà chung",
+      "Không wifi toàn khu — đúng tinh thần khoá tu"
+    ],
+    "diemDenLanCan": [
+      {
+        "ten": "Hồ Tuyền Lâm",
+        "khoangCach": "5 km"
+      },
+      {
+        "ten": "Thiền viện Trúc Lâm",
+        "khoangCach": "6 km"
+      },
+      {
+        "ten": "Trung tâm Đà Lạt",
+        "khoangCach": "12 km"
+      },
+      {
+        "ten": "Sân bay Liên Khương",
+        "khoangCach": "28 km"
+      }
+    ]
+  },
+  {
+    "id": "p-an-tru",
+    "slug": "an-tru-hue",
+    "name": "An Trú",
+    "type": "Retreat",
+    "region": "Huế",
+    "images": [
+      {
+        "seed": "an-tru-1",
+        "alt": "Sân vườn thiền Nhật giữa đồi thông An Trú Huế"
+      },
+      {
+        "seed": "an-tru-2",
+        "alt": "Phòng châm cứu và xông thuốc tại An Trú"
+      },
+      {
+        "seed": "an-tru-3",
+        "alt": "Trai đường dùng cơm chay theo giờ cố định"
+      }
+    ],
+    "description": "An Trú dựng trên một đồi thông nhìn xuống sông Hương, kết hợp nếp sinh hoạt thiền viện Huế với trị liệu y học phương đông. Ngày bắt đầu bằng công phu sáng tuỳ chọn, sau đó khách có thể ghép lịch châm cứu, giác hơi hoặc xông thuốc nam với các thầy thuốc bản địa. Bếp trai đường nấu đúng giờ, không phục vụ lệch bữa, giữ nếp ăn chậm và ăn đủ thay vì ăn theo ý muốn từng lúc.",
+    "highlights": [
+      "Công phu sáng tuỳ chọn cùng chư tăng, không bắt buộc với khách lưu trú",
+      "Châm cứu, giác hơi, xông thuốc nam do thầy thuốc y học cổ truyền phụ trách",
+      "Trai đường nấu cơm chay đúng giờ, thực đơn đổi theo mùa",
+      "Đồi thông riêng nhìn sông Hương, không tiếp khách đoàn quá 10 người"
+    ],
+    "nganh": [
+      "Dưỡng sinh & Phòng ngừa theo Y học phương đông",
+      "Cân bằng cảm xúc & Chánh niệm"
+    ],
+    "loaiHinh": [
+      "Y học phương đông",
+      "Sức khỏe tinh thần"
+    ],
+    "coYeuToVanHoaVungMien": true,
+    "mucCaoNhat": 3,
+    "giaThamKhao": 1900000,
+    "giaUnit": "đêm",
+    "trangThai": "Đang nhận khách",
+    "roomTypes": [
+      {
+        "id": "phong-don-doi-thong",
+        "name": "Phòng Đơn Đồi Thông",
+        "sucChua": 1,
+        "dienTich": "16 m²",
+        "giaThamKhao": 1900000,
+        "giaUnit": "đêm",
+        "soLuong": 4,
+        "description": "Phòng nhỏ dành riêng cho khách đi một mình, gần thiền đường và trai đường nhất nên tiện dậy sớm dự công phu. Bài trí như phòng tăng: đơn giản, không đồ trang trí thừa.",
+        "images": [
+          {
+            "seed": "phong-don-doi-thong-1",
+            "alt": "Phòng Đơn Đồi Thông nhìn ra đồi thông An Trú"
+          },
+          {
+            "seed": "phong-don-doi-thong-2",
+            "alt": "Bàn thờ nhỏ trong Phòng Đơn Đồi Thông"
+          }
+        ],
+        "tieuChuan": [
+          "Giường đơn, bàn thờ nhỏ riêng cho khách muốn tụng niệm cá nhân",
+          "Không TV, cửa sổ nhìn đồi thông",
+          "Gần trai đường và thiền đường chung"
+        ]
+      },
+      {
+        "id": "phong-doi-song-huong",
+        "name": "Phòng Đôi Sông Hương",
+        "sucChua": 2,
+        "dienTich": "26 m²",
+        "giaThamKhao": 2600000,
+        "giaUnit": "đêm",
+        "soLuong": 3,
+        "description": "Phòng nằm ở dãy ngoài, ban công riêng đủ rộng để ngồi thiền ngoài trời lúc sáng sớm, nhìn thẳng xuống khúc sông Hương uốn quanh chân đồi.",
+        "images": [
+          {
+            "seed": "phong-doi-song-huong-1",
+            "alt": "Ban công Phòng Đôi Sông Hương nhìn xuống sông Hương"
+          },
+          {
+            "seed": "phong-doi-song-huong-2",
+            "alt": "Toạ cụ ngồi thiền trong Phòng Đôi Sông Hương"
+          }
+        ],
+        "tieuChuan": [
+          "Ban công riêng nhìn xuống sông Hương",
+          "Có sẵn toạ cụ ngồi thiền, đèn dịu dùng buổi tối",
+          "Ưu tiên xếp lịch châm cứu, xông thuốc trong ngày"
+        ]
+      }
+    ],
+    "tienIch": [
+      "Wifi khu vực trai đường và thiền đường",
+      "Bãi đỗ xe trong khuôn viên đồi thông",
+      "Cơm chay ba bữa đã gồm trong giá phòng",
+      "Đưa đón ga Huế theo yêu cầu (phụ phí)",
+      "Cho mượn xe đạp miễn phí đi vòng đồi thông"
+    ],
+    "diemDenLanCan": [
+      {
+        "ten": "Bến thuyền sông Hương gần nhất",
+        "khoangCach": "2 km"
+      },
+      {
+        "ten": "Chùa Thiên Mụ",
+        "khoangCach": "5 km"
+      },
+      {
+        "ten": "Kinh thành Huế",
+        "khoangCach": "9 km"
+      },
+      {
+        "ten": "Ga Huế",
+        "khoangCach": "10 km"
+      }
+    ]
+  }
+]

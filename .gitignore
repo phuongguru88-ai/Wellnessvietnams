@@ -1,0 +1,19 @@
+node_modules
+.next
+out
+.env
+.env.local
+next-env.d.ts
+*.tsbuildinfo
+data/leads.json
+data/bookings.json
+
+# Local editor/agent settings
+.claude/
+*.code-workspace
+
+# Ảnh/video đối tác tải lên qua /quan-tri — dữ liệu runtime, không phải asset
+# nguồn. Lưu ý y hệt data/*.json (xem lib/store.ts): trên hosting serverless
+# filesystem không bền, ảnh sẽ mất khi container khởi động lại — chỉ đúng
+# cách khi chạy trên máy chủ có ổ đĩa bền (VPS, container có volume).
+public/uploads
