@@ -15,6 +15,7 @@ const DEFAULT_SETTINGS: AiSettings = {
   models: {
     phan_tich_lead: { provider: "anthropic", model: "claude-sonnet-5" },
     tong_hop_khach_hang: { provider: "anthropic", model: "claude-opus-5" },
+    tro_ly_wellness: { provider: "anthropic", model: "claude-sonnet-5" },
   },
   updatedAt: new Date(0).toISOString(),
 };

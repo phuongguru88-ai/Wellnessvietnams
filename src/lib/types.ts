@@ -312,12 +312,13 @@ export interface PartnerAccount {
 }
 
 /** Các chức năng AI trong hệ thống — mỗi chức năng chọn được một nhà cung cấp + model (bộ não) riêng. */
-export const AI_FEATURES = ["phan_tich_lead", "tong_hop_khach_hang"] as const;
+export const AI_FEATURES = ["phan_tich_lead", "tong_hop_khach_hang", "tro_ly_wellness"] as const;
 export type AiFeature = (typeof AI_FEATURES)[number];
 
 export const AI_FEATURE_LABELS: Record<AiFeature, string> = {
   phan_tich_lead: "Phân tích từng khách hàng (lead)",
   tong_hop_khach_hang: "Tổng hợp insight toàn bộ khách hàng",
+  tro_ly_wellness: "Trợ lý tư vấn wellness (Đông y & thiền)",
 };
 
 /** Nhà cung cấp AI hỗ trợ — mỗi nhà cung cấp cần API key riêng, nhập tại /quan-tri/cai-dat-ai. */
