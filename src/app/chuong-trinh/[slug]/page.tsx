@@ -6,11 +6,12 @@ import { CheckCircle2, ShieldAlert, Sparkles, Users, XCircle } from "lucide-reac
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
-import { ImageGrid } from "@/components/ImageGrid";
 import { LoaiHinhTags } from "@/components/LoaiHinhTag";
 import { Media } from "@/components/Media";
 import { MucBadge } from "@/components/MucBadge";
 import { NganhTags } from "@/components/NganhTag";
+import { ProgramSectionNav } from "@/components/ProgramSectionNav";
+import { StickyMobileBookingBar } from "@/components/StickyMobileBookingBar";
 import { getProgram, getPropertyById } from "@/lib/data";
 import { formatPrice, formatVnd } from "@/lib/format";
 import { PROGRAM_ICON } from "@/lib/icons";
@@ -79,8 +80,23 @@ export default async function ProgramDetail({
     })),
   };
 
+  const [leadImage, ...extraImages] = program.images;
+
+  const sections = [
+    { id: "tong-quan", label: "Tổng quan" },
+    { id: "phu-hop", label: "Dành cho ai" },
+    { id: "lich-trinh", label: "Lịch trình" },
+    { id: "bao-gom", label: "Bao gồm" },
+    { id: "doi-ngu", label: "Đội ngũ" },
+    ...(program.giangVien && program.giangVien.length > 0
+      ? [{ id: "giang-vien", label: "Giảng viên" }]
+      : []),
+    ...(program.yeuCauTruocKhi.length > 0 ? [{ id: "chuan-bi", label: "Cần chuẩn bị" }] : []),
+    ...(property ? [{ id: "dia-diem", label: "Địa điểm" }] : []),
+  ];
+
   return (
-    <article>
+    <article className="pb-24 lg:pb-0">
       <div className="shell pt-6">
         <Breadcrumbs
           items={[
@@ -92,49 +108,73 @@ export default async function ProgramDetail({
       </div>
 
       <header className="shell pt-4">
-        <p className="eyebrow flex items-center gap-1.5">
-          <PROGRAM_ICON aria-hidden size={14} strokeWidth={2} />
-          {program.durationLabel}
-          {property ? ` · ${property.name}, ${property.region}` : ""}
-        </p>
-        <h1 className="mt-2 text-[2.25rem] leading-[1.08] sm:text-5xl">
-          {program.name}
-        </h1>
-        <div className="mt-5 flex flex-wrap items-center gap-3">
-          <MucBadge muc={program.muc} />
-          <NganhTags values={program.nganh} />
-          <LoaiHinhTags values={program.loaiHinh} />
-          {program.trangThai !== "Đang mở bán" && (
-            <span className="rounded-full border border-line px-2.5 py-1 text-[11px] font-medium text-ink-soft">
-              {program.trangThai}
-            </span>
-          )}
+        {/* Hero hai cột: giới thiệu bên trái, ảnh lớn bên phải — đồng bộ với hero của trang Lưu trú. */}
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center lg:gap-14">
+          <div>
+            <p className="eyebrow flex items-center gap-1.5">
+              <PROGRAM_ICON aria-hidden size={14} strokeWidth={2} />
+              {program.durationLabel}
+              {property ? ` · ${property.name}, ${property.region}` : ""}
+            </p>
+            <h1 className="mt-2 text-[2.25rem] leading-[1.05] sm:text-5xl">{program.name}</h1>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <MucBadge muc={program.muc} />
+              <NganhTags values={program.nganh} />
+              <LoaiHinhTags values={program.loaiHinh} />
+              {program.trangThai !== "Đang mở bán" && (
+                <span className="rounded-full border border-line px-2.5 py-1 text-[11px] font-medium text-ink-soft">
+                  {program.trangThai}
+                </span>
+              )}
+            </div>
+            {program.coYeuToVanHoaVungMien && (
+              <p className="mt-3 flex items-center gap-1.5 text-xs font-medium text-moss">
+                <Sparkles aria-hidden size={13} strokeWidth={2} />
+                Có yếu tố văn hoá vùng miền — chữa lành từ tri thức bản địa
+              </p>
+            )}
+            <p className="mt-5 max-w-prose text-[15px] leading-relaxed text-ink-soft">
+              {program.summary}
+            </p>
+            {program.mucTieu.length > 0 && (
+              <p className="mt-3 text-sm text-ink-soft">Mục tiêu: {program.mucTieu.join(" · ")}</p>
+            )}
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <a href="#dat-cho" className="btn btn-primary">
+                Giữ chỗ ngay
+              </a>
+              <a href="#lich-trinh" className="btn btn-ghost">
+                Xem lịch trình
+              </a>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-card border border-line">
+            <Media feature image={leadImage} className="aspect-[4/3] w-full" />
+          </div>
         </div>
-        {program.coYeuToVanHoaVungMien && (
-          <p className="mt-3 flex items-center gap-1.5 text-xs font-medium text-moss">
-            <Sparkles aria-hidden size={13} strokeWidth={2} />
-            Có yếu tố văn hoá vùng miền — chữa lành từ tri thức bản địa
-          </p>
-        )}
-        {program.mucTieu.length > 0 && (
-          <p className="mt-4 text-sm text-ink-soft">
-            Mục tiêu: {program.mucTieu.join(" · ")}
-          </p>
+
+        {extraImages.length > 0 && (
+          <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {extraImages.slice(0, 4).map((img) => (
+              <div key={img.seed} className="overflow-hidden rounded-card border border-line">
+                <Media interactive={false} image={img} className="aspect-[4/3] w-full" />
+              </div>
+            ))}
+          </div>
         )}
       </header>
 
-      <div className="shell mt-8">
-        <ImageGrid images={program.images} />
-      </div>
+      <ProgramSectionNav sections={sections} />
 
-      <div className="shell mt-12 grid gap-12 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-16">
+      <div className="shell mt-10 grid gap-12 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-16">
         <div>
-          <section className="prose-vn">
+          <section id="tong-quan" className="prose-vn scroll-mt-28">
             <h2 className="text-2xl">Tổng quan</h2>
             <p className="mt-3">{program.description}</p>
           </section>
 
-          <section className="mt-10">
+          <section id="phu-hop" className="mt-10 scroll-mt-28">
             <h2 className="text-2xl">Chương trình này dành cho ai</h2>
             <div className="mt-4 grid overflow-hidden rounded-card border border-line bg-card sm:grid-cols-2 sm:divide-x sm:divide-[color:var(--line)]">
               <div className="p-5">
@@ -164,7 +204,7 @@ export default async function ProgramDetail({
             </div>
           </section>
 
-          <section className="mt-12">
+          <section id="lich-trinh" className="mt-12 scroll-mt-28">
             <h2 className="text-2xl">Lịch trình</h2>
             <ol className="mt-6 space-y-8">
               {program.itinerary.map((day) => (
@@ -187,7 +227,7 @@ export default async function ProgramDetail({
             </ol>
           </section>
 
-          <section className="mt-12">
+          <section id="bao-gom" className="mt-12 scroll-mt-28">
             <h2 className="text-2xl">Đã bao gồm & không bao gồm</h2>
             <div className="mt-4 grid overflow-hidden rounded-card border border-line bg-card sm:grid-cols-2 sm:divide-x sm:divide-[color:var(--line)]">
               <div className="p-5">
@@ -217,7 +257,7 @@ export default async function ProgramDetail({
             </div>
           </section>
 
-          <section className="mt-12 rounded-card border border-line bg-card p-6">
+          <section id="doi-ngu" className="mt-12 scroll-mt-28 rounded-card border border-line bg-card p-6">
             <h2 className="text-xl">Đội ngũ phụ trách & vận hành</h2>
             <p className="mt-2 flex items-start gap-2 text-sm text-ink-soft">
               <ShieldAlert aria-hidden size={15} strokeWidth={2} className="mt-0.5 shrink-0 text-turmeric" />
@@ -233,7 +273,7 @@ export default async function ProgramDetail({
           </section>
 
           {program.giangVien && program.giangVien.length > 0 && (
-            <section className="mt-12">
+            <section id="giang-vien" className="mt-12 scroll-mt-28">
               <h2 className="text-2xl">Giảng viên/người hướng dẫn</h2>
               <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 {program.giangVien.map((gv) => (
@@ -257,7 +297,7 @@ export default async function ProgramDetail({
           )}
 
           {program.yeuCauTruocKhi.length > 0 && (
-            <section className="mt-12">
+            <section id="chuan-bi" className="mt-12 scroll-mt-28">
               <h2 className="text-2xl">Cần chuẩn bị trước</h2>
               <ul className="mt-4 space-y-2.5">
                 {program.yeuCauTruocKhi.map((y) => (
@@ -280,7 +320,7 @@ export default async function ProgramDetail({
           </section>
 
           {property && (
-            <section className="mt-12">
+            <section id="dia-diem" className="mt-12 scroll-mt-28">
               <h2 className="text-2xl">Diễn ra tại</h2>
               <Link
                 href={`/luu-tru/${property.slug}`}
@@ -300,7 +340,7 @@ export default async function ProgramDetail({
           )}
         </div>
 
-        <aside className="lg:sticky lg:top-24 lg:self-start">
+        <aside id="dat-cho" className="scroll-mt-28 lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-card border border-line bg-card p-6 shadow-soft">
             <p className="eyebrow">Giá chương trình</p>
             <p className="mt-2 font-display text-3xl">
@@ -346,6 +386,12 @@ export default async function ProgramDetail({
           </div>
         </aside>
       </div>
+
+      <StickyMobileBookingBar
+        priceLabel={formatPrice(program.price, program.priceUnit)}
+        targetId="dat-cho"
+        ctaLabel={program.trangThai === "Tạm ngừng" ? "Đăng ký chờ" : "Giữ chỗ"}
+      />
 
       <script
         type="application/ld+json"
