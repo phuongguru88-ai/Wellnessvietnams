@@ -1,4 +1,4 @@
-import { ExternalLink, LayoutDashboard, LogOut, ShieldCheck, Users } from "lucide-react";
+import { Brain, ExternalLink, LayoutDashboard, LogOut, Settings, ShieldCheck, Users } from "lucide-react";
 import Link from "next/link";
 
 import { logoutAction } from "@/app/quan-tri/actions";
@@ -13,13 +13,16 @@ const BASE_LINKS = [
   { href: "/quan-tri/trai-nghiem", label: "Trải nghiệm", icon: EXPERIENCE_ICON },
 ] as const;
 
-// Khách hàng (lead) và Kiến thức không gắn với một Property cụ thể nào —
-// chỉ đội ngũ trung tâm (role admin) mới thấy, tránh lộ số điện thoại khách
-// của toàn hệ thống cho từng đối tác riêng lẻ.
+// Liên hệ (lead), Phân tích khách hàng, Kiến thức, Đối tác và Cài đặt AI
+// không gắn với một Property cụ thể nào — chỉ đội ngũ trung tâm (role admin)
+// mới thấy, tránh lộ số điện thoại khách của toàn hệ thống cho từng đối tác
+// riêng lẻ.
 const ADMIN_ONLY_LINKS = [
-  { href: "/quan-tri/leads", label: "Khách hàng", icon: Users },
+  { href: "/quan-tri/leads", label: "Liên hệ", icon: Users },
+  { href: "/quan-tri/khach-hang", label: "Khách hàng", icon: Brain },
   { href: "/quan-tri/bai-viet", label: "Kiến thức", icon: ARTICLE_ICON },
   { href: "/quan-tri/doi-tac", label: "Đối tác", icon: ShieldCheck },
+  { href: "/quan-tri/cai-dat-ai", label: "Cài đặt AI", icon: Settings },
 ] as const;
 
 export function AdminHeader({ actor }: { actor: Actor }) {

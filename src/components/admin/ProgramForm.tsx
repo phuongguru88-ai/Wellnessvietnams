@@ -6,6 +6,7 @@ import { useActionState } from "react";
 import { Checkbox, CheckboxGroup, RadioGroup, Select, TextArea, TextField } from "./fields";
 import { MediaField } from "./MediaField";
 import type { ProgramFormState } from "@/app/quan-tri/chuong-trinh/actions";
+import { serializeInstructorsText } from "@/lib/instructors";
 import { serializeItineraryText } from "@/lib/itinerary";
 import { serializeImageRef } from "@/lib/media";
 import {
@@ -233,7 +234,20 @@ export function ProgramForm({
         defaultValue={initial?.chuyenMonDoiNgu}
         rows={2}
         required
+        hint="Mô tả chung cả đội — vd 'Lương y y học cổ truyền có giấy phép hành nghề'."
         error={state?.errors?.chuyenMonDoiNgu}
+      />
+
+      <TextArea
+        label="Giảng viên/người hướng dẫn"
+        name="giangVien"
+        defaultValue={serializeInstructorsText(initial?.giangVien)}
+        rows={8}
+        hint={
+          'Tuỳ chọn — giới thiệu từng người cụ thể kèm ảnh. Mỗi người bắt đầu bằng dòng "## Tên | Vai trò", ' +
+          'dòng tiếp theo "Ảnh: https://..." (bỏ qua nếu không có ảnh), các dòng sau là tiểu sử. Để trống nếu chỉ cần mô tả chung ở trên.'
+        }
+        error={state?.errors?.giangVien}
       />
 
       <div className="grid gap-4 sm:grid-cols-2">

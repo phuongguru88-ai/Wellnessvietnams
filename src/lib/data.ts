@@ -1,4 +1,5 @@
 import { estimateReadingMinutes, parseContentText } from "./content";
+import { parseInstructorsText } from "./instructors";
 import { parseItineraryText } from "./itinerary";
 import { buildImageRef } from "./media";
 import { ensureUniqueSlug, slugify } from "./slug";
@@ -527,6 +528,8 @@ export function parseProgramForm(
   const chuyenMonDoiNgu = str(fd, "chuyenMonDoiNgu");
   if (!chuyenMonDoiNgu) errors.chuyenMonDoiNgu = "Vui lòng mô tả chuyên môn của đội ngũ phụ trách.";
 
+  const giangVienText = str(fd, "giangVien");
+
   const quyMoNhom = parseQuyMoNhom(fd, "quyMoNhomMin", "quyMoNhomMax");
 
   const gioiHanCamKet = str(fd, "gioiHanCamKet");
@@ -551,6 +554,8 @@ export function parseProgramForm(
   if (Object.keys(errors).length > 0) return { ok: false, errors };
 
   const seedBase = slugify(str(fd, "slug") || name);
+  const giangVien = giangVienText ? parseInstructorsText(giangVienText, seedBase) : undefined;
+
   return {
     ok: true,
     data: {
@@ -572,6 +577,7 @@ export function parseProgramForm(
       propertyRef,
       yeuCauTruocKhi,
       chuyenMonDoiNgu,
+      giangVien,
       quyMoNhom,
       gioiHanCamKet,
       price: price!,

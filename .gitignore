@@ -7,6 +7,10 @@ next-env.d.ts
 *.tsbuildinfo
 data/leads.json
 data/bookings.json
+# Chứa API key Anthropic — tuyệt đối không commit.
+data/ai-settings.json
+data/lead-insights.json
+data/customer-insights.json
 
 # Local editor/agent settings
 .claude/

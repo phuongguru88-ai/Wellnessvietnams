@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { CheckCircle2, Circle, Phone } from "lucide-react";
+import { CheckCircle2, Circle, Phone, Sparkles } from "lucide-react";
 import { redirect } from "next/navigation";
 
+import { listLeadInsights } from "@/lib/lead-insights";
 import { listLeads } from "@/lib/leads";
 import { getActor } from "@/lib/scope";
-import { toggleContactedAction } from "./actions";
+import { analyzeLeadAction, toggleContactedAction } from "./actions";
 
 export const metadata: Metadata = {
   title: "Khách để lại thông tin",
@@ -17,7 +18,8 @@ export default async function LeadsPage() {
   const actor = await getActor();
   if (actor?.role !== "admin") redirect("/quan-tri");
 
-  const leads = await listLeads();
+  const [leads, insights] = await Promise.all([listLeads(), listLeadInsights()]);
+  const insightByLeadId = new Map(insights.map((i) => [i.leadId, i]));
 
   return (
     <div>
@@ -38,10 +40,13 @@ export default async function LeadsPage() {
               <th className="px-4 py-3 font-semibold">Nguồn</th>
               <th className="px-4 py-3 font-semibold">Gửi lúc</th>
               <th className="px-4 py-3 font-semibold">Trạng thái</th>
+              <th className="px-4 py-3 font-semibold">Phân tích AI</th>
             </tr>
           </thead>
           <tbody>
-            {leads.map((l) => (
+            {leads.map((l) => {
+              const insight = insightByLeadId.get(l.id);
+              return (
               <tr key={l.id} className="border-b border-line last:border-b-0 align-top">
                 <td className="px-4 py-3">
                   <p className="font-medium">{l.name}</p>
@@ -79,11 +84,48 @@ export default async function LeadsPage() {
                     </button>
                   </form>
                 </td>
+                <td className="max-w-[260px] px-4 py-3">
+                  {insight ? (
+                    <div className="space-y-1.5">
+                      <p className="inline-flex items-center gap-1 rounded-full bg-ink px-2.5 py-1 text-xs font-semibold text-bg">
+                        <Sparkles aria-hidden size={12} strokeWidth={1.75} />
+                        {insight.segment}
+                      </p>
+                      <p className="text-xs text-ink-soft">{insight.summary}</p>
+                      {insight.suggestedActions.length > 0 && (
+                        <ul className="list-disc space-y-0.5 pl-4 text-xs text-ink-soft">
+                          {insight.suggestedActions.map((a, i) => (
+                            <li key={i}>{a}</li>
+                          ))}
+                        </ul>
+                      )}
+                      <form action={analyzeLeadAction.bind(null, l.id)}>
+                        <button
+                          type="submit"
+                          className="text-xs font-semibold text-ink-soft underline underline-offset-4 hover:text-ink"
+                        >
+                          Phân tích lại
+                        </button>
+                      </form>
+                    </div>
+                  ) : (
+                    <form action={analyzeLeadAction.bind(null, l.id)}>
+                      <button
+                        type="submit"
+                        className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-line px-3 py-1.5 text-xs font-semibold text-ink-soft hover:border-ink-soft hover:text-ink"
+                      >
+                        <Sparkles aria-hidden size={14} strokeWidth={1.75} />
+                        Phân tích AI
+                      </button>
+                    </form>
+                  )}
+                </td>
               </tr>
-            ))}
+              );
+            })}
             {leads.length === 0 && (
               <tr>
-                <td colSpan={7} className="px-4 py-10 text-center text-ink-soft">
+                <td colSpan={8} className="px-4 py-10 text-center text-ink-soft">
                   Chưa có ai để lại thông tin.
                 </td>
               </tr>

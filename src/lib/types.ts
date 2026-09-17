@@ -168,6 +168,16 @@ export interface Property {
 export const PROGRAM_TRANG_THAI = ["Đang mở bán", "Theo mùa", "Tạm ngừng"] as const;
 export type ProgramTrangThai = (typeof PROGRAM_TRANG_THAI)[number];
 
+/** Một giảng viên/người hướng dẫn trực tiếp phụ trách chương trình — khác với `chuyenMonDoiNgu` (mô tả chung cả đội), dùng khi muốn giới thiệu từng người cụ thể kèm ảnh. */
+export interface Instructor {
+  name: string;
+  /** Vai trò/chức danh — vd "Lương y y học cổ truyền", "Huấn luyện viên yoga". */
+  vaiTro: string;
+  /** Tiểu sử/giới thiệu ngắn. */
+  moTa: string;
+  images: ImageRef[];
+}
+
 export interface Program {
   id: string;
   slug: string;
@@ -206,6 +216,8 @@ export interface Program {
   yeuCauTruocKhi: string[];
   /** Mô tả ngắn về đội ngũ phụ trách — vd "Lương y y học cổ truyền có giấy phép hành nghề". */
   chuyenMonDoiNgu: string;
+  /** Giới thiệu từng giảng viên/người hướng dẫn cụ thể kèm ảnh — bỏ trống nếu chỉ cần mô tả chung ở chuyenMonDoiNgu. */
+  giangVien?: Instructor[];
   /** Quy mô nhóm tối thiểu/tối đa — bỏ trống nếu chương trình chỉ phục vụ riêng từng khách. */
   quyMoNhom?: { min: number; max: number };
   /** Giới hạn/cam kết vận hành — vd "Chỉ nhận khách đăng ký trọn gói, không tách lẻ từng ngày". */
@@ -297,6 +309,54 @@ export interface PartnerAccount {
   /** Tắt để khoá đăng nhập mà không cần xoá tài khoản. */
   active: boolean;
   createdAt: string;
+}
+
+/** Các chức năng AI trong hệ thống — mỗi chức năng chọn được một model (bộ não) riêng. */
+export const AI_FEATURES = ["phan_tich_lead", "tong_hop_khach_hang"] as const;
+export type AiFeature = (typeof AI_FEATURES)[number];
+
+export const AI_FEATURE_LABELS: Record<AiFeature, string> = {
+  phan_tich_lead: "Phân tích từng khách hàng (lead)",
+  tong_hop_khach_hang: "Tổng hợp insight toàn bộ khách hàng",
+};
+
+/** Model Claude cho phép chọn — xem console.anthropic.com để biết giá/khả năng từng model. */
+export const AI_MODELS = ["claude-opus-5", "claude-sonnet-5", "claude-haiku-4-5"] as const;
+export type AiModel = (typeof AI_MODELS)[number];
+
+export const AI_MODEL_LABELS: Record<AiModel, string> = {
+  "claude-opus-5": "Claude Opus 5 — mạnh nhất, phân tích sâu (chi phí cao nhất)",
+  "claude-sonnet-5": "Claude Sonnet 5 — cân bằng chất lượng/chi phí",
+  "claude-haiku-4-5": "Claude Haiku 4.5 — nhanh, tiết kiệm nhất",
+};
+
+/** Cấu hình AI toàn hệ thống, chỉnh tại /quan-tri/cai-dat-ai — chỉ role admin. */
+export interface AiSettings {
+  /** API key Anthropic. Rỗng = dùng biến môi trường ANTHROPIC_API_KEY của server (nếu có). */
+  apiKey: string;
+  models: Record<AiFeature, AiModel>;
+  updatedAt: string;
+}
+
+/** Kết quả AI phân tích một lead cụ thể — lưu lại để không phải gọi API lại mỗi lần xem. */
+export interface LeadInsight {
+  leadId: string;
+  summary: string;
+  segment: string;
+  suggestedActions: string[];
+  model: AiModel;
+  createdAt: string;
+}
+
+/** Báo cáo AI tổng hợp toàn bộ khách hàng — chỉ giữ bản mới nhất, tạo lại theo yêu cầu admin. */
+export interface CustomerInsightsReport {
+  generatedAt: string;
+  leadCount: number;
+  model: AiModel;
+  summary: string;
+  segments: { name: string; count: number; description: string }[];
+  trends: string[];
+  recommendations: string[];
 }
 
 export const BOOKING_STATUS = ["Chờ xác nhận", "Đã xác nhận", "Đã huỷ"] as const;

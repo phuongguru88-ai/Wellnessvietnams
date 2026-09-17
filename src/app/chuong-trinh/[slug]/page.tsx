@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { ImageGrid } from "@/components/ImageGrid";
 import { LoaiHinhTags } from "@/components/LoaiHinhTag";
+import { Media } from "@/components/Media";
 import { MucBadge } from "@/components/MucBadge";
 import { NganhTags } from "@/components/NganhTag";
 import { getProgram, getPropertyById } from "@/lib/data";
@@ -230,6 +231,30 @@ export default async function ProgramDetail({
             )}
             <p className="mt-3 border-t border-line pt-3 text-sm text-ink-soft">{program.gioiHanCamKet}</p>
           </section>
+
+          {program.giangVien && program.giangVien.length > 0 && (
+            <section className="mt-12">
+              <h2 className="text-2xl">Giảng viên/người hướng dẫn</h2>
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                {program.giangVien.map((gv) => (
+                  <div key={gv.name} className="flex gap-4 rounded-card border border-line bg-card p-5">
+                    <Media
+                      image={gv.images[0]}
+                      interactive={false}
+                      className="h-20 w-20 shrink-0 rounded-full"
+                    />
+                    <div>
+                      <p className="font-display text-lg leading-tight">{gv.name}</p>
+                      <p className="mt-0.5 text-xs font-medium uppercase tracking-wide text-turmeric">
+                        {gv.vaiTro}
+                      </p>
+                      <p className="mt-2 whitespace-pre-line text-sm text-ink-soft">{gv.moTa}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {program.yeuCauTruocKhi.length > 0 && (
             <section className="mt-12">
