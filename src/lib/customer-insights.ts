@@ -1,7 +1,7 @@
-import { effortConfigFor, extractJsonObject, getAiClientForFeature } from "./ai-client";
+import { extractJsonObject, generateText } from "./ai-client";
 import { listLeads } from "./leads";
 import { readJson, writeJson } from "./store";
-import type { AiModel, CustomerInsightsReport } from "./types";
+import type { CustomerInsightsReport } from "./types";
 
 const CUSTOMER_INSIGHTS_FILE = "customer-insights.json";
 
@@ -10,14 +10,12 @@ export async function getCustomerInsightsReport(): Promise<CustomerInsightsRepor
   return readJson<CustomerInsightsReport | undefined>(CUSTOMER_INSIGHTS_FILE, undefined);
 }
 
-/** Gọi Claude tổng hợp insight từ toàn bộ lead hiện có, ghi đè báo cáo cũ. */
+/** Gọi AI tổng hợp insight từ toàn bộ lead hiện có, ghi đè báo cáo cũ. */
 export async function generateCustomerInsights(): Promise<CustomerInsightsReport> {
   const leads = await listLeads();
   if (leads.length === 0) {
     throw new Error("Chưa có khách hàng (lead) nào để phân tích.");
   }
-
-  const { client, model } = await getAiClientForFeature("tong_hop_khach_hang");
 
   const byLoaiHinh: Record<string, number> = {};
   for (const l of leads) {
@@ -50,20 +48,20 @@ Hãy phân tích tệp khách hàng này và trả lời DUY NHẤT một JSON h
   "recommendations": ["Đề xuất chiến lược chăm sóc/marketing 1", "Đề xuất 2"]
 }`;
 
-  const response = await client.messages.create({
-    model,
-    max_tokens: 4096,
-    ...effortConfigFor(model, "medium"),
-    messages: [{ role: "user", content: prompt }],
+  const { text, provider, model } = await generateText({
+    feature: "tong_hop_khach_hang",
+    prompt,
+    maxTokens: 4096,
+    anthropicEffort: "medium",
   });
 
-  const textBlock = response.content.find((b) => b.type === "text");
-  const parsed = parseReport(textBlock?.type === "text" ? textBlock.text : "{}");
+  const parsed = parseReport(text);
 
   const report: CustomerInsightsReport = {
     generatedAt: new Date().toISOString(),
     leadCount: leads.length,
-    model: model as AiModel,
+    provider,
+    model,
     ...parsed,
   };
 

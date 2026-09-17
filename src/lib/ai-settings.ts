@@ -1,71 +1,85 @@
 import { readJson, writeJson } from "./store";
 import {
   AI_FEATURES,
-  AI_MODELS,
+  AI_MODEL_OPTIONS,
+  AI_PROVIDERS,
   type AiFeature,
-  type AiModel,
+  type AiProvider,
   type AiSettings,
 } from "./types";
 
 const AI_SETTINGS_FILE = "ai-settings.json";
 
 const DEFAULT_SETTINGS: AiSettings = {
-  apiKey: "",
+  apiKeys: { anthropic: "", openai: "", google: "" },
   models: {
-    phan_tich_lead: "claude-sonnet-5",
-    tong_hop_khach_hang: "claude-opus-5",
+    phan_tich_lead: { provider: "anthropic", model: "claude-sonnet-5" },
+    tong_hop_khach_hang: { provider: "anthropic", model: "claude-opus-5" },
   },
   updatedAt: new Date(0).toISOString(),
 };
 
-/** Đọc cấu hình AI hiện tại — luôn trả về đủ field cho mọi feature, kể cả feature mới thêm sau này. */
+/** Biến môi trường fallback cho từng provider khi ô API key trong trang cài đặt để trống. */
+const ENV_VAR_BY_PROVIDER: Record<AiProvider, string> = {
+  anthropic: "ANTHROPIC_API_KEY",
+  openai: "OPENAI_API_KEY",
+  google: "GOOGLE_API_KEY",
+};
+
+/** Đọc cấu hình AI hiện tại — luôn trả về đủ field cho mọi feature/provider, kể cả cái mới thêm sau này. */
 export async function getAiSettings(): Promise<AiSettings> {
   const saved = await readJson<Partial<AiSettings>>(AI_SETTINGS_FILE, {});
   return {
     ...DEFAULT_SETTINGS,
     ...saved,
+    apiKeys: { ...DEFAULT_SETTINGS.apiKeys, ...saved.apiKeys },
     models: { ...DEFAULT_SETTINGS.models, ...saved.models },
   };
 }
 
-/** API key thực dùng để gọi Claude: ưu tiên key nhập trong trang cài đặt, sau đó mới tới biến môi trường. */
-export function resolveApiKey(settings: AiSettings): string | undefined {
-  return settings.apiKey || process.env.ANTHROPIC_API_KEY || undefined;
+/** API key thực dùng để gọi một provider: ưu tiên key nhập trong trang cài đặt, sau đó mới tới biến môi trường. */
+export function resolveApiKey(settings: AiSettings, provider: AiProvider): string | undefined {
+  return settings.apiKeys[provider] || process.env[ENV_VAR_BY_PROVIDER[provider]] || undefined;
 }
 
-export type AiSettingsFormErrors = Partial<Record<"apiKey" | AiFeature, string>>;
+export type AiSettingsFormErrors = Partial<Record<`apiKey_${AiProvider}` | AiFeature, string>>;
 
 export type ParsedAiSettings = {
-  apiKey: string;
-  models: Record<AiFeature, AiModel>;
+  apiKeys: Record<AiProvider, string>;
+  models: Record<AiFeature, { provider: AiProvider; model: string }>;
 };
 
 /**
- * Đọc form cài đặt AI. Để trống ô API key nghĩa là GIỮ NGUYÊN key cũ — trang
- * không bao giờ hiện lại key thật ra input để tránh lộ qua màn hình/lịch sử
- * trình duyệt.
+ * Đọc form cài đặt AI. Để trống một ô API key nghĩa là GIỮ NGUYÊN key cũ
+ * của provider đó — trang không bao giờ hiện lại key thật ra input để
+ * tránh lộ qua màn hình/lịch sử trình duyệt.
  */
 export function parseAiSettingsForm(
   formData: FormData,
-  currentApiKey: string,
+  current: AiSettings,
 ): { ok: true; data: ParsedAiSettings } | { ok: false; errors: AiSettingsFormErrors } {
   const errors: AiSettingsFormErrors = {};
 
-  const rawApiKey = String(formData.get("apiKey") ?? "").trim();
-  const apiKey = rawApiKey === "" ? currentApiKey : rawApiKey;
+  const apiKeys = {} as Record<AiProvider, string>;
+  for (const provider of AI_PROVIDERS) {
+    const raw = String(formData.get(`apiKey_${provider}`) ?? "").trim();
+    apiKeys[provider] = raw === "" ? current.apiKeys[provider] : raw;
+  }
 
-  const models = {} as Record<AiFeature, AiModel>;
+  const validValues = new Set(AI_MODEL_OPTIONS.map((o) => `${o.provider}:${o.model}`));
+  const models = {} as Record<AiFeature, { provider: AiProvider; model: string }>;
   for (const feature of AI_FEATURES) {
     const value = String(formData.get(`model_${feature}`) ?? "");
-    if (!AI_MODELS.includes(value as AiModel)) {
+    if (!validValues.has(value)) {
       errors[feature] = "Vui lòng chọn một model hợp lệ.";
       continue;
     }
-    models[feature] = value as AiModel;
+    const [provider, model] = value.split(":") as [AiProvider, string];
+    models[feature] = { provider, model };
   }
 
   if (Object.keys(errors).length > 0) return { ok: false, errors };
-  return { ok: true, data: { apiKey, models } };
+  return { ok: true, data: { apiKeys, models } };
 }
 
 export async function saveAiSettings(data: ParsedAiSettings): Promise<AiSettings> {

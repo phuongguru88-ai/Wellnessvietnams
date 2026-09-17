@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 
 import { getCustomerInsightsReport } from "@/lib/customer-insights";
 import { getActor } from "@/lib/scope";
+import { AI_PROVIDER_LABELS } from "@/lib/types";
 import { generateCustomerInsightsAction } from "./actions";
 
 export const metadata: Metadata = {
@@ -63,7 +64,7 @@ export default async function KhachHangPage({
         <div className="mt-6 space-y-6">
           <div className="rounded-card border border-line bg-card p-6">
             <p className="text-xs text-ink-soft">
-              Dựa trên {report.leadCount} lead · model {report.model} · tạo lúc{" "}
+              Dựa trên {report.leadCount} lead · {AI_PROVIDER_LABELS[report.provider]} ({report.model}) · tạo lúc{" "}
               {new Date(report.generatedAt).toLocaleString("vi-VN")}
             </p>
             <p className="mt-3 text-sm text-ink">{report.summary}</p>

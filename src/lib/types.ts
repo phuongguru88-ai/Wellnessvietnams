@@ -311,7 +311,7 @@ export interface PartnerAccount {
   createdAt: string;
 }
 
-/** Các chức năng AI trong hệ thống — mỗi chức năng chọn được một model (bộ não) riêng. */
+/** Các chức năng AI trong hệ thống — mỗi chức năng chọn được một nhà cung cấp + model (bộ não) riêng. */
 export const AI_FEATURES = ["phan_tich_lead", "tong_hop_khach_hang"] as const;
 export type AiFeature = (typeof AI_FEATURES)[number];
 
@@ -320,21 +320,40 @@ export const AI_FEATURE_LABELS: Record<AiFeature, string> = {
   tong_hop_khach_hang: "Tổng hợp insight toàn bộ khách hàng",
 };
 
-/** Model Claude cho phép chọn — xem console.anthropic.com để biết giá/khả năng từng model. */
-export const AI_MODELS = ["claude-opus-5", "claude-sonnet-5", "claude-haiku-4-5"] as const;
-export type AiModel = (typeof AI_MODELS)[number];
+/** Nhà cung cấp AI hỗ trợ — mỗi nhà cung cấp cần API key riêng, nhập tại /quan-tri/cai-dat-ai. */
+export const AI_PROVIDERS = ["anthropic", "openai", "google"] as const;
+export type AiProvider = (typeof AI_PROVIDERS)[number];
 
-export const AI_MODEL_LABELS: Record<AiModel, string> = {
-  "claude-opus-5": "Claude Opus 5 — mạnh nhất, phân tích sâu (chi phí cao nhất)",
-  "claude-sonnet-5": "Claude Sonnet 5 — cân bằng chất lượng/chi phí",
-  "claude-haiku-4-5": "Claude Haiku 4.5 — nhanh, tiết kiệm nhất",
+export const AI_PROVIDER_LABELS: Record<AiProvider, string> = {
+  anthropic: "Anthropic (Claude)",
+  openai: "OpenAI (GPT)",
+  google: "Google (Gemini)",
 };
+
+/** Một model cụ thể có thể chọn trong form — value dùng để encode vào <select> là `${provider}:${model}`. */
+export interface AiModelOption {
+  provider: AiProvider;
+  model: string;
+  label: string;
+}
+
+export const AI_MODEL_OPTIONS: AiModelOption[] = [
+  { provider: "anthropic", model: "claude-opus-5", label: "Claude Opus 5 — mạnh nhất, phân tích sâu" },
+  { provider: "anthropic", model: "claude-sonnet-5", label: "Claude Sonnet 5 — cân bằng chất lượng/chi phí" },
+  { provider: "anthropic", model: "claude-haiku-4-5", label: "Claude Haiku 4.5 — nhanh, tiết kiệm nhất" },
+  { provider: "openai", model: "gpt-5.5", label: "OpenAI GPT-5.5 — mạnh nhất" },
+  { provider: "openai", model: "gpt-5.4-mini", label: "OpenAI GPT-5.4 Mini — cân bằng chất lượng/chi phí" },
+  { provider: "openai", model: "gpt-5.4-nano", label: "OpenAI GPT-5.4 Nano — nhanh, tiết kiệm nhất" },
+  { provider: "google", model: "gemini-3-pro-preview", label: "Google Gemini 3 Pro — mạnh nhất" },
+  { provider: "google", model: "gemini-2.5-pro", label: "Google Gemini 2.5 Pro — cân bằng chất lượng/chi phí" },
+  { provider: "google", model: "gemini-2.5-flash", label: "Google Gemini 2.5 Flash — nhanh, tiết kiệm nhất" },
+];
 
 /** Cấu hình AI toàn hệ thống, chỉnh tại /quan-tri/cai-dat-ai — chỉ role admin. */
 export interface AiSettings {
-  /** API key Anthropic. Rỗng = dùng biến môi trường ANTHROPIC_API_KEY của server (nếu có). */
-  apiKey: string;
-  models: Record<AiFeature, AiModel>;
+  /** Rỗng ở một provider = dùng biến môi trường tương ứng của server (nếu có) — xem lib/ai-settings.ts. */
+  apiKeys: Record<AiProvider, string>;
+  models: Record<AiFeature, { provider: AiProvider; model: string }>;
   updatedAt: string;
 }
 
@@ -344,7 +363,8 @@ export interface LeadInsight {
   summary: string;
   segment: string;
   suggestedActions: string[];
-  model: AiModel;
+  provider: AiProvider;
+  model: string;
   createdAt: string;
 }
 
@@ -352,7 +372,8 @@ export interface LeadInsight {
 export interface CustomerInsightsReport {
   generatedAt: string;
   leadCount: number;
-  model: AiModel;
+  provider: AiProvider;
+  model: string;
   summary: string;
   segments: { name: string; count: number; description: string }[];
   trends: string[];

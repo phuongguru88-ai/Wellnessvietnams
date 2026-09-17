@@ -14,11 +14,11 @@ export async function saveAiSettingsAction(
 ): Promise<AiSettingsFormState> {
   const actor = await getActor();
   if (actor?.role !== "admin") {
-    return { errors: { apiKey: "Bạn không có quyền thay đổi cài đặt này." } };
+    return { errors: { apiKey_anthropic: "Bạn không có quyền thay đổi cài đặt này." } };
   }
 
   const current = await getAiSettings();
-  const result = parseAiSettingsForm(formData, current.apiKey);
+  const result = parseAiSettingsForm(formData, current);
   if (!result.ok) return { errors: result.errors };
 
   await saveAiSettings(result.data);

@@ -1,6 +1,6 @@
-import { effortConfigFor, extractJsonObject, getAiClientForFeature } from "./ai-client";
+import { extractJsonObject, generateText } from "./ai-client";
 import { readJson, writeJson } from "./store";
-import type { AiModel, Lead, LeadInsight } from "./types";
+import type { Lead, LeadInsight } from "./types";
 
 const LEAD_INSIGHTS_FILE = "lead-insights.json";
 
@@ -14,10 +14,8 @@ export async function listLeadInsights(): Promise<LeadInsight[]> {
   return readJson<LeadInsight[]>(LEAD_INSIGHTS_FILE, []);
 }
 
-/** Gọi Claude phân tích một lead cụ thể, lưu kết quả lại (ghi đè phân tích cũ của lead đó nếu có). */
+/** Gọi AI phân tích một lead cụ thể, lưu kết quả lại (ghi đè phân tích cũ của lead đó nếu có). */
 export async function analyzeLead(lead: Lead): Promise<LeadInsight> {
-  const { client, model } = await getAiClientForFeature("phan_tich_lead");
-
   const prompt = `Bạn là chuyên gia chăm sóc khách hàng cho một công ty du lịch nghỉ dưỡng/wellness tại Việt Nam.
 Dưới đây là thông tin một khách để lại lời nhắn quan tâm (lead) qua form liên hệ trên website:
 - Tên: ${lead.name}
@@ -34,20 +32,20 @@ Hãy phân tích khách hàng này và trả lời DUY NHẤT một JSON hợp l
   "suggestedActions": ["Hành động tư vấn/chăm sóc cụ thể 1", "Hành động 2", "Hành động 3"]
 }`;
 
-  const response = await client.messages.create({
-    model,
-    max_tokens: 1536,
-    ...effortConfigFor(model, "low"),
-    messages: [{ role: "user", content: prompt }],
+  const { text, provider, model } = await generateText({
+    feature: "phan_tich_lead",
+    prompt,
+    maxTokens: 1536,
+    anthropicEffort: "low",
   });
 
-  const textBlock = response.content.find((b) => b.type === "text");
-  const parsed = parseInsight(textBlock?.type === "text" ? textBlock.text : "{}");
+  const parsed = parseInsight(text);
 
   const insight: LeadInsight = {
     leadId: lead.id,
     ...parsed,
-    model: model as AiModel,
+    provider,
+    model,
     createdAt: new Date().toISOString(),
   };
 

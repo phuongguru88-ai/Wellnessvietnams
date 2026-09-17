@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { AiSettingsForm } from "@/components/admin/AiSettingsForm";
-import { getAiSettings } from "@/lib/ai-settings";
+import { getAiSettings, resolveApiKey } from "@/lib/ai-settings";
 import { getActor } from "@/lib/scope";
+import { AI_PROVIDERS } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Cài đặt AI",
@@ -26,7 +27,8 @@ export default async function CaiDatAiPage({
       <p className="eyebrow">Quản trị đối tác</p>
       <h1 className="mt-2 text-3xl">Cài đặt AI</h1>
       <p className="mt-2 text-sm text-ink-soft">
-        Nhập API key Anthropic (Claude) và chọn model dùng cho từng chức năng AI trong hệ thống.
+        Nhập API key của một hoặc nhiều nhà cung cấp AI (Anthropic Claude, OpenAI, Google Gemini) và
+        chọn model dùng cho từng chức năng AI trong hệ thống.
       </p>
 
       {sp.saved && (
@@ -36,7 +38,12 @@ export default async function CaiDatAiPage({
       )}
 
       <div className="mt-6 max-w-xl rounded-card border border-line bg-card p-6">
-        <AiSettingsForm hasApiKey={Boolean(settings.apiKey || process.env.ANTHROPIC_API_KEY)} models={settings.models} />
+        <AiSettingsForm
+          hasApiKey={Object.fromEntries(
+            AI_PROVIDERS.map((p) => [p, Boolean(resolveApiKey(settings, p))]),
+          ) as Record<(typeof AI_PROVIDERS)[number], boolean>}
+          models={settings.models}
+        />
       </div>
     </div>
   );
