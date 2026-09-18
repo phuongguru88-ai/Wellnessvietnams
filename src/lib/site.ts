@@ -23,5 +23,6 @@ export const NAV = [
   { href: "/chuong-trinh", label: "Chương trình" },
   { href: "/trai-nghiem", label: "Trải nghiệm" },
   { href: "/kien-thuc", label: "Kiến thức" },
+  { href: "/tro-ly-wellness", label: "Trợ lý AI" },
   { href: "/ve-chung-toi", label: "Về chúng tôi" },
 ] as const;
