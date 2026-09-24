@@ -40,7 +40,7 @@ export async function validateBooking(input: BookingInput): Promise<ValidationRe
 
   const propertyId = str(input.propertyId);
   const property = propertyId ? await getPropertyById(propertyId) : undefined;
-  if (!property) errors.propertyId = "Không tìm thấy nơi lưu trú này.";
+  if (!property) errors.propertyId = "Không tìm thấy nơi nghỉ dưỡng này.";
 
   const roomTypeId = str(input.roomTypeId) || undefined;
   const roomType = roomTypeId ? property?.roomTypes.find((r) => r.id === roomTypeId) : undefined;
@@ -55,7 +55,7 @@ export async function validateBooking(input: BookingInput): Promise<ValidationRe
   if (!errors.checkIn && !errors.checkOut) {
     nights = nightsBetween(checkIn, checkOut);
     if (nights < 1) errors.checkOut = "Ngày trả phòng phải sau ngày nhận phòng ít nhất một đêm.";
-    if (nights > 60) errors.checkOut = "Kỳ lưu trú quá dài — gọi trực tiếp để được tư vấn.";
+    if (nights > 60) errors.checkOut = "Kỳ nghỉ dưỡng quá dài — gọi trực tiếp để được tư vấn.";
   }
 
   const guestsRaw = str(input.guests);

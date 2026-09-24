@@ -28,7 +28,7 @@ export default async function NewRoomTypePage({
         <RoomTypeForm
           action={createRoomTypeAction.bind(null, id)}
           submitLabel="Tạo hạng phòng"
-          cancelHref={`/quan-tri/luu-tru/${id}/phong`}
+          cancelHref={`/quan-tri/nghi-duong/${id}/phong`}
           defaultGiaUnit={property.giaUnit}
         />
       </div>

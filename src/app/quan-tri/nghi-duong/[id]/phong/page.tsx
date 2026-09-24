@@ -1,44 +1,53 @@
 import type { Metadata } from "next";
 import { Eye, Pencil, Plus, Trash2 } from "lucide-react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 import { ConfirmSubmitButton } from "@/components/admin/ConfirmSubmitButton";
-import { getProperties } from "@/lib/data";
+import { getPropertyById } from "@/lib/data";
 import { formatPrice } from "@/lib/format";
-import { getActor, scopeProperties } from "@/lib/scope";
-import { PROPERTY_TYPE_LABEL } from "@/lib/types";
-import { deletePropertyAction } from "./actions";
+import { getActor, ownsProperty } from "@/lib/scope";
+import { deleteRoomTypeAction } from "./actions";
 
 export const metadata: Metadata = {
-  title: "Quản lý lưu trú",
+  title: "Quản lý hạng phòng",
   robots: { index: false, follow: false },
 };
 
-export default async function AdminPropertiesPage({
+export default async function RoomTypesPage({
+  params,
   searchParams,
 }: {
-  searchParams: Promise<{ deleted?: string; error?: string }>;
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ created?: string; saved?: string; deleted?: string; error?: string }>;
 }) {
+  const { id } = await params;
   const sp = await searchParams;
-  const actor = await getActor();
-  if (!actor) return null;
-  const properties = scopeProperties(actor, await getProperties());
+  const [property, actor] = await Promise.all([getPropertyById(id), getActor()]);
+  if (!property || !actor || !ownsProperty(actor, id)) notFound();
 
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p className="eyebrow">Quản trị đối tác</p>
-          <h1 className="mt-2 text-3xl">Lưu trú</h1>
+          <p className="eyebrow">
+            <Link href={`/quan-tri/nghi-duong/${id}/sua`} className="hover:text-ink">
+              {property.name}
+            </Link>
+          </p>
+          <h1 className="mt-2 text-3xl">Hạng phòng</h1>
         </div>
-        {actor.role === "admin" && (
-          <Link href="/quan-tri/luu-tru/moi" className="btn btn-primary">
-            <Plus aria-hidden size={16} strokeWidth={2} />
-            Thêm nơi lưu trú
-          </Link>
-        )}
+        <Link href={`/quan-tri/nghi-duong/${id}/phong/moi`} className="btn btn-primary">
+          <Plus aria-hidden size={16} strokeWidth={2} />
+          Thêm hạng phòng
+        </Link>
       </div>
 
+      {(sp.created || sp.saved) && (
+        <p className="mt-4 rounded-xl border border-moss bg-card px-4 py-3 text-sm font-medium text-moss">
+          {sp.created ? "Đã tạo hạng phòng." : "Đã lưu thay đổi."}
+        </p>
+      )}
       {sp.deleted && (
         <p className="mt-4 rounded-xl border border-moss bg-card px-4 py-3 text-sm font-medium text-moss">
           Đã xoá.
@@ -55,27 +64,25 @@ export default async function AdminPropertiesPage({
           <thead>
             <tr className="border-b border-line bg-card text-left text-xs uppercase tracking-wide text-ink-soft">
               <th className="px-4 py-3 font-semibold">Tên</th>
-              <th className="px-4 py-3 font-semibold">Loại / vùng miền</th>
-              <th className="px-4 py-3 font-semibold">Mức</th>
+              <th className="px-4 py-3 font-semibold">Sức chứa</th>
+              <th className="px-4 py-3 font-semibold">Diện tích</th>
+              <th className="px-4 py-3 font-semibold">Số lượng</th>
               <th className="px-4 py-3 font-semibold">Giá</th>
-              <th className="px-4 py-3 font-semibold">Trạng thái</th>
               <th className="px-4 py-3 font-semibold"></th>
             </tr>
           </thead>
           <tbody>
-            {properties.map((p) => (
-              <tr key={p.id} className="border-b border-line last:border-b-0">
-                <td className="px-4 py-3 font-medium">{p.name}</td>
-                <td className="px-4 py-3 text-ink-soft">
-                  {PROPERTY_TYPE_LABEL[p.type]} · {p.region}
-                </td>
-                <td className="px-4 py-3 text-ink-soft">Mức {p.mucCaoNhat}</td>
-                <td className="px-4 py-3 text-ink-soft">{formatPrice(p.giaThamKhao, p.giaUnit)}</td>
-                <td className="px-4 py-3 text-ink-soft">{p.trangThai}</td>
+            {property.roomTypes.map((r) => (
+              <tr key={r.id} className="border-b border-line last:border-b-0">
+                <td className="px-4 py-3 font-medium">{r.name}</td>
+                <td className="px-4 py-3 text-ink-soft">{r.sucChua} khách</td>
+                <td className="px-4 py-3 text-ink-soft">{r.dienTich ?? "—"}</td>
+                <td className="px-4 py-3 text-ink-soft">{r.soLuong ?? "—"}</td>
+                <td className="px-4 py-3 text-ink-soft">{formatPrice(r.giaThamKhao, r.giaUnit)}</td>
                 <td className="px-4 py-3">
                   <div className="flex items-center justify-end gap-4">
                     <Link
-                      href={`/luu-tru/${p.slug}`}
+                      href={`/nghi-duong/${property.slug}#hang-phong`}
                       target="_blank"
                       className="inline-flex items-center gap-1 text-ink-soft hover:text-ink"
                     >
@@ -83,15 +90,15 @@ export default async function AdminPropertiesPage({
                       Xem
                     </Link>
                     <Link
-                      href={`/quan-tri/luu-tru/${p.id}/sua`}
+                      href={`/quan-tri/nghi-duong/${id}/phong/${r.id}/sua`}
                       className="inline-flex items-center gap-1 font-semibold text-turmeric"
                     >
                       <Pencil aria-hidden size={14} strokeWidth={1.75} />
                       Sửa
                     </Link>
                     <ConfirmSubmitButton
-                      action={deletePropertyAction.bind(null, p.id)}
-                      confirmText={`Xoá "${p.name}"? Không thể hoàn tác.`}
+                      action={deleteRoomTypeAction.bind(null, id, r.id)}
+                      confirmText={`Xoá hạng phòng "${r.name}"? Không thể hoàn tác.`}
                     >
                       <Trash2 aria-hidden size={14} strokeWidth={1.75} />
                       Xoá
@@ -100,10 +107,10 @@ export default async function AdminPropertiesPage({
                 </td>
               </tr>
             ))}
-            {properties.length === 0 && (
+            {property.roomTypes.length === 0 && (
               <tr>
                 <td colSpan={6} className="px-4 py-10 text-center text-ink-soft">
-                  Chưa có nơi lưu trú nào.
+                  Chưa có hạng phòng nào — nơi này đang hiện là một loại chỗ duy nhất.
                 </td>
               </tr>
             )}

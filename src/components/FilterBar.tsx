@@ -14,7 +14,7 @@ export type ExtraFilter = {
 };
 
 /**
- * Filter dùng chung cho cả 3 tab (Lưu trú / Chương trình / Trải nghiệm).
+ * Filter dùng chung cho cả 3 tab (Nghỉ dưỡng / Chương trình / Trải nghiệm).
  * Trạng thái nằm trên URL nên kết quả chia sẻ được và render được ở server.
  */
 export function FilterBar({

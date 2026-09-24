@@ -150,7 +150,7 @@ export default async function ExperienceDetail({
             <section className="mt-12">
               <h2 className="text-2xl">Nơi tổ chức</h2>
               <Link
-                href={`/luu-tru/${property.slug}`}
+                href={`/nghi-duong/${property.slug}`}
                 className="group mt-4 flex flex-col gap-1 rounded-card border border-line p-6 transition hover:border-ink-soft hover:bg-card"
               >
                 <p className="eyebrow">

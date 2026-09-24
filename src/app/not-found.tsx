@@ -9,14 +9,14 @@ export default function NotFound() {
       </h1>
       <p className="max-w-prose text-ink-soft">
         Có thể liên kết đã cũ, hoặc nội dung đã được đổi tên. Bạn thử quay lại
-        trang chủ hoặc xem danh sách lưu trú.
+        trang chủ hoặc xem danh sách nghỉ dưỡng.
       </p>
       <div className="mt-2 flex flex-wrap justify-center gap-3">
         <Link href="/" className="btn btn-primary">
           Về trang chủ
         </Link>
-        <Link href="/luu-tru" className="btn btn-ghost">
-          Xem lưu trú
+        <Link href="/nghi-duong" className="btn btn-ghost">
+          Xem nghỉ dưỡng
         </Link>
       </div>
     </div>

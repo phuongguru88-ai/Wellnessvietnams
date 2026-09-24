@@ -225,6 +225,14 @@ function parsePrice(fd: FormData, key: string): number | undefined {
   return Number.isFinite(n) && n > 0 ? n : undefined;
 }
 
+/** Property nghiên cứu chưa mở bán được phép để giá 0; UI sẽ hiện "Liên hệ". */
+function parsePropertyPrice(fd: FormData, key: string): number | undefined {
+  const raw = str(fd, key).replace(/[.,\s]/g, "");
+  if (!raw) return undefined;
+  const n = Number(raw);
+  return Number.isFinite(n) && n >= 0 ? n : undefined;
+}
+
 function parseInt1(fd: FormData, key: string): number | undefined {
   const raw = str(fd, key);
   const n = Number(raw);
@@ -238,7 +246,7 @@ const TRANG_THAI: TrangThai[] = ["Đang nhận khách", "Sắp mở", "Tạm d�
 
 // roomTypes không còn nằm trong form Property — quản lý riêng qua
 // createRoomType/updateRoomType/deleteRoomType bên dưới (xem
-// /quan-tri/luu-tru/[id]/phong), để mỗi hạng phòng có form + ảnh riêng
+// /quan-tri/nghi-duong/[id]/phong), để mỗi hạng phòng có form + ảnh riêng
 // thay vì gộp chung một ô văn bản khó soạn.
 export type PropertyInput = Omit<Property, "id" | "slug" | "roomTypes"> & { slugInput?: string };
 
@@ -271,8 +279,8 @@ export function parsePropertyForm(fd: FormData): FormResult<PropertyInput> {
   const mucCaoNhat = parseMuc(fd, "mucCaoNhat");
   if (!mucCaoNhat) errors.mucCaoNhat = "Chọn mức dịch vụ cao nhất.";
 
-  const giaThamKhao = parsePrice(fd, "giaThamKhao");
-  if (!giaThamKhao) errors.giaThamKhao = "Giá tham khảo phải là số dương.";
+  const giaThamKhao = parsePropertyPrice(fd, "giaThamKhao");
+  if (giaThamKhao === undefined) errors.giaThamKhao = "Giá tham khảo phải là số không âm.";
 
   const giaUnit = str(fd, "giaUnit") || "đêm";
 
@@ -301,6 +309,10 @@ export function parsePropertyForm(fd: FormData): FormResult<PropertyInput> {
       images: parseImages(fd, "images", seedBase, name),
       tienIch: lines(fd, "tienIch"),
       diemDenLanCan: parseDiemDenLanCan(fd, "diemDenLanCan"),
+      tieuChuanWellness: lines(fd, "tieuChuanWellness"),
+      nguonThamKhao: lines(fd, "nguonThamKhao"),
+      ngayXacMinh: str(fd, "ngayXacMinh") || undefined,
+      daXacMinhDoiTac: parseBool(fd, "daXacMinhDoiTac"),
     },
   };
 }
@@ -342,7 +354,7 @@ export async function updateProperty(
 
 /* ----------------------------- Hạng phòng ----------------------------- */
 // Mỗi hạng phòng có form + ảnh riêng, tách khỏi form Property (xem
-// /quan-tri/luu-tru/[id]/phong). Vẫn lưu lồng trong Property.roomTypes vì
+// /quan-tri/nghi-duong/[id]/phong). Vẫn lưu lồng trong Property.roomTypes vì
 // đó là đúng quan hệ dữ liệu (hạng phòng luôn thuộc về một Property) —
 // không cần tách thành file JSON riêng.
 
@@ -521,7 +533,7 @@ export function parseProgramForm(
   const khongBaoGom = lines(fd, "khongBaoGom");
 
   const propertyRef = str(fd, "propertyRef");
-  if (!validPropertyIds.has(propertyRef)) errors.propertyRef = "Chọn nơi lưu trú diễn ra chương trình.";
+  if (!validPropertyIds.has(propertyRef)) errors.propertyRef = "Chọn nơi nghỉ dưỡng diễn ra chương trình.";
 
   const yeuCauTruocKhi = lines(fd, "yeuCauTruocKhi");
 

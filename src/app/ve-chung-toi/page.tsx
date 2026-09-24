@@ -39,7 +39,7 @@ const TIEU_CHI_NHOM: { nhom: string; icon: LucideIcon; soLuong: number; vi: stri
     soLuong: 24,
     vi: [
       "Dược liệu, thực phẩm có nguồn gốc truy được, ưu tiên tự trồng hoặc trong vùng",
-      "Không dùng phụ gia, chất bảo quản trong bếp phục vụ khách lưu trú dài ngày",
+      "Không dùng phụ gia, chất bảo quản trong bếp phục vụ khách nghỉ dưỡng dài ngày",
       "Vườn thuốc / vườn rau được khảo sát thực địa trước khi công nhận",
     ],
   },
@@ -178,7 +178,7 @@ export default function VeChungToiPage() {
       <section id="he-muc" className="shell scroll-mt-24 py-16 sm:py-20">
         <p className="eyebrow">Hệ Mức</p>
         <h2 className="mt-2 max-w-[28ch] text-3xl sm:text-4xl">
-          Một thang ba mức, áp dụng cho cả lưu trú, chương trình và trải
+          Một thang ba mức, áp dụng cho cả nghỉ dưỡng, chương trình và trải
           nghiệm
         </h2>
         <p className="mt-4 max-w-prose text-ink-soft">

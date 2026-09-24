@@ -30,7 +30,7 @@ export default async function BookingsPage() {
       <p className="eyebrow">Quản trị đối tác</p>
       <h1 className="mt-2 text-3xl">Yêu cầu đặt phòng</h1>
       <p className="mt-2 text-sm text-ink-soft">
-        {bookings.length} yêu cầu giữ chỗ gửi từ trang Lưu trú, mới nhất trước
+        {bookings.length} yêu cầu giữ chỗ gửi từ trang Nghỉ dưỡng, mới nhất trước
         {choXacNhan > 0 && ` — ${choXacNhan} đang chờ xác nhận`}. Đây là giữ
         chỗ tạm, gọi lại khách để xác nhận phòng còn trống trước khi đổi
         trạng thái.
@@ -73,7 +73,7 @@ export default async function BookingsPage() {
                 </td>
                 <td className="px-4 py-3">
                   <Link
-                    href={`/luu-tru/${b.propertySlug}`}
+                    href={`/nghi-duong/${b.propertySlug}`}
                     target="_blank"
                     className="font-medium underline-offset-4 hover:underline"
                   >

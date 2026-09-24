@@ -42,7 +42,7 @@ export function useBooking() {
 }
 
 /**
- * Bọc quanh toàn bộ trang chi tiết một nơi lưu trú. Mọi nút "Đặt phòng"
+ * Bọc quanh toàn bộ trang chi tiết một nơi nghỉ dưỡng. Mọi nút "Đặt phòng"
  * (sidebar, thanh cố định mobile, từng thẻ hạng phòng) đều gọi chung một
  * popup duy nhất qua context — chọn phòng ở đâu cũng ra cùng một chỗ điền
  * thông tin, không phải chọn lại. Gửi thẳng về /api/bookings: đây là yêu

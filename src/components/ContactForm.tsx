@@ -78,7 +78,7 @@ export function ContactForm({
         <h3 className="mt-3 text-xl">Đã nhận thông tin của bạn</h3>
         <p className="mx-auto mt-2 max-w-prose text-sm text-ink-soft">
           Tư vấn viên sẽ gọi lại trong vòng 24 giờ (giờ làm việc 8:00 – 21:00)
-          để cùng bạn chọn nơi lưu trú, chương trình hoặc buổi trải nghiệm phù
+          để cùng bạn chọn nơi nghỉ dưỡng, chương trình hoặc buổi trải nghiệm phù
           hợp với thể trạng và thời gian bạn có.
         </p>
         <button

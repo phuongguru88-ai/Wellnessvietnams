@@ -7,7 +7,7 @@ import { getActor, ownsProperty } from "@/lib/scope";
 import { updatePropertyAction } from "../../actions";
 
 export const metadata: Metadata = {
-  title: "Sửa nơi lưu trú",
+  title: "Sửa nơi nghỉ dưỡng",
   robots: { index: false, follow: false },
 };
 
@@ -30,7 +30,7 @@ export default async function EditPropertyPage({
 
       {(sp.created || sp.saved) && (
         <p className="mt-4 rounded-xl border border-moss bg-card px-4 py-3 text-sm font-medium text-moss">
-          {sp.created ? "Đã tạo nơi lưu trú. Bạn có thể chỉnh sửa thêm bên dưới." : "Đã lưu thay đổi."}
+          {sp.created ? "Đã tạo nơi nghỉ dưỡng. Bạn có thể chỉnh sửa thêm bên dưới." : "Đã lưu thay đổi."}
         </p>
       )}
 

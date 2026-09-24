@@ -39,7 +39,7 @@ export default async function EditRoomTypePage({
           action={updateRoomTypeAction.bind(null, id, roomId)}
           initial={found.room}
           submitLabel="Lưu thay đổi"
-          cancelHref={`/quan-tri/luu-tru/${id}/phong`}
+          cancelHref={`/quan-tri/nghi-duong/${id}/phong`}
           defaultGiaUnit={found.property.giaUnit}
         />
       </div>

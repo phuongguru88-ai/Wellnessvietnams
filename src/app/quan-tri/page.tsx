@@ -35,7 +35,7 @@ export default async function QuanTriPage() {
   const choXacNhan = bookings.filter((b) => b.status === "Chờ xác nhận").length;
 
   const cards = [
-    { href: "/quan-tri/luu-tru", label: "Lưu trú", icon: STAY_ICON, count: scopedProperties.length },
+    { href: "/quan-tri/nghi-duong", label: "Nghỉ dưỡng", icon: STAY_ICON, count: scopedProperties.length },
     {
       href: "/quan-tri/dat-phong",
       label: "Yêu cầu đặt phòng",

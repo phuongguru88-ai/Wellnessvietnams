@@ -8,7 +8,7 @@ import type { PartnerFormState } from "@/app/quan-tri/doi-tac/actions";
 import type { PartnerAccount } from "@/lib/types";
 
 const ROLE_OPTIONS = [
-  { value: "partner", label: "Đối tác — chỉ quản lý nơi lưu trú được gán" },
+  { value: "partner", label: "Đối tác — chỉ quản lý nơi nghỉ dưỡng được gán" },
   { value: "admin", label: "Quản trị viên — toàn quyền" },
 ];
 
@@ -66,7 +66,7 @@ export function PartnerForm({
       />
 
       <CheckboxGroup
-        label="Quản lý những nơi lưu trú nào"
+        label="Quản lý những nơi nghỉ dưỡng nào"
         name="propertyIds"
         defaultValues={initial?.propertyIds}
         options={propertyOptions}

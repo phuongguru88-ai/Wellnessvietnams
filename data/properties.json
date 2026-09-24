@@ -311,7 +311,7 @@
       "Nhà tâm lý có chứng chỉ hành nghề, nhận tham vấn theo liệu trình",
       "Spa trầm hương 900m2, 11 phòng trị liệu, có phòng đôi cho cặp",
       "Bãi tắm riêng dốc thoải, an toàn cho bơi sớm",
-      "Trà chiều trầm hương miễn phí cho khách lưu trú"
+      "Trà chiều trầm hương miễn phí cho khách nghỉ dưỡng"
     ],
     "nganh": [
       "Làm đẹp & Thư giãn",
@@ -464,12 +464,12 @@
         "alt": "Cabin cá nhân không wifi giữa rừng thông"
       }
     ],
-    "description": "Rừng Thiền nằm khuất trong một vạt rừng thông ở ngoại ô Đà Lạt, dựng thành mười cabin gỗ tách biệt quanh một thiền đường chung và hồ nước nhỏ. Lịch trình mỗi ngày cố định giờ ngồi thiền, ăn chay và thiền hành, do một thiền sư thường trú hướng dẫn theo truyền thống Làng Mai. Không wifi trong cabin, không lịch trình tự chọn — khách đăng ký theo khoá dài ngày, không nhận khách lưu trú lẻ.",
+    "description": "Rừng Thiền nằm khuất trong một vạt rừng thông ở ngoại ô Đà Lạt, dựng thành mười cabin gỗ tách biệt quanh một thiền đường chung và hồ nước nhỏ. Lịch trình mỗi ngày cố định giờ ngồi thiền, ăn chay và thiền hành, do một thiền sư thường trú hướng dẫn theo truyền thống Làng Mai. Không wifi trong cabin, không lịch trình tự chọn — khách đăng ký theo khoá dài ngày, không nhận khách nghỉ dưỡng lẻ.",
     "highlights": [
       "Thiền sư thường trú hướng dẫn theo truyền thống Làng Mai, hai buổi ngồi thiền mỗi ngày",
       "Ăn chay thanh đạm hoàn toàn từ nông trại hữu cơ tại chỗ",
       "Cabin đơn không điện thoại, không wifi, đèn dầu buổi tối",
-      "Chỉ nhận khách theo khoá 3 hoặc 7 ngày, không lưu trú lẻ"
+      "Chỉ nhận khách theo khoá 3 hoặc 7 ngày, không nhận khách lẻ"
     ],
     "nganh": [
       "Cân bằng cảm xúc & Chánh niệm",
@@ -584,7 +584,7 @@
     ],
     "description": "An Trú dựng trên một đồi thông nhìn xuống sông Hương, kết hợp nếp sinh hoạt thiền viện Huế với trị liệu y học phương đông. Ngày bắt đầu bằng công phu sáng tuỳ chọn, sau đó khách có thể ghép lịch châm cứu, giác hơi hoặc xông thuốc nam với các thầy thuốc bản địa. Bếp trai đường nấu đúng giờ, không phục vụ lệch bữa, giữ nếp ăn chậm và ăn đủ thay vì ăn theo ý muốn từng lúc.",
     "highlights": [
-      "Công phu sáng tuỳ chọn cùng chư tăng, không bắt buộc với khách lưu trú",
+      "Công phu sáng tuỳ chọn cùng chư tăng, không bắt buộc với khách nghỉ dưỡng",
       "Châm cứu, giác hơi, xông thuốc nam do thầy thuốc y học cổ truyền phụ trách",
       "Trai đường nấu cơm chay đúng giờ, thực đơn đổi theo mùa",
       "Đồi thông riêng nhìn sông Hương, không tiếp khách đoàn quá 10 người"
@@ -679,5 +679,553 @@
         "khoangCach": "10 km"
       }
     ]
+  },
+  {
+    "id": "p-an-lam-ninh-van-bay",
+    "slug": "an-lam-retreats-ninh-van-bay",
+    "name": "An Lam Retreats Ninh Vân Bay",
+    "type": "Retreat",
+    "region": "Khánh Hòa",
+    "images": [
+      {
+        "seed": "an-lam-ninh-van-bay-1",
+        "alt": "Biệt thự sát biển tại An Lam Retreats Ninh Vân Bay",
+        "kind": "image",
+        "src": "https://anlam.com/wp-content/uploads/2025/01/An-Lam-Retreats-Ninh-Van-Bay_Three-Bedroom-Beachfront-Pool-Villa-feature.jpg"
+      },
+      {
+        "seed": "an-lam-ninh-van-bay-2",
+        "alt": "Buổi aerial yoga trong chương trình wellness của An Lam Retreats",
+        "kind": "image",
+        "src": "https://anlam.com/wp-content/uploads/2024/03/ariel-yoga-5.webp"
+      },
+      {
+        "seed": "an-lam-ninh-van-bay-3",
+        "alt": "Không gian trị liệu Jungle Spa tại An Lam Retreats Ninh Vân Bay",
+        "kind": "image",
+        "src": "https://anlam.com/wp-content/uploads/2026/02/Ninh-Van-Bay-An-Lam-Spa-2.jpg"
+      },
+      {
+        "seed": "an-lam-ninh-van-bay-4",
+        "alt": "Beachfront Pool Villa giữa thiên nhiên vịnh Ninh Vân",
+        "kind": "image",
+        "src": "https://anlam.com/wp-content/uploads/2026/02/Beachfront-Pool-Villa-An-Lam-Ninh-Van-Bay-4.jpg"
+      }
+    ],
+    "description": "An Lam Retreats Ninh Vân Bay là khu nghỉ biệt lập trên bán đảo Hòn Hèo với 37 villa thân thiện môi trường, kiến trúc lấy cảm hứng từ di sản Việt Nam. Jungle Spa cung cấp trị liệu dựa trên truyền thống địa phương, yoga, thiền, sound healing và các chương trình chăm sóc sức khỏe giữa cảnh quan rừng nhiệt đới.",
+    "highlights": [
+      "37 villa thân thiện môi trường trên bán đảo Hòn Hèo",
+      "Jungle Spa có phòng trị liệu, sauna, steam, yoga sala và fitness centre",
+      "Chương trình yoga, thiền, sound healing và liệu pháp Việt Nam",
+      "Nguyên liệu nhà hàng ưu tiên vườn tại chỗ và nguồn địa phương",
+      "Thông tin cần đối tác xác nhận trước khi mở bán"
+    ],
+    "nganh": [
+      "Giảm căng thẳng & Phục hồi năng lượng",
+      "Cân bằng cảm xúc & Chánh niệm",
+      "Làm đẹp & Thư giãn"
+    ],
+    "loaiHinh": [
+      "Spa & Làm đẹp",
+      "Vận động & Thân-tâm",
+      "Thiên nhiên & Sinh thái"
+    ],
+    "coYeuToVanHoaVungMien": false,
+    "mucCaoNhat": 3,
+    "giaThamKhao": 0,
+    "giaUnit": "đêm",
+    "trangThai": "Tạm dừng",
+    "roomTypes": [],
+    "tienIch": [
+      "Jungle Spa mở cửa 9:00–22:00",
+      "Sauna và phòng xông hơi",
+      "Yoga sala và trung tâm thể hình",
+      "Nhà hàng Sen dùng nông sản tại vườn và nguồn địa phương"
+    ],
+    "diemDenLanCan": [],
+    "tieuChuanWellness": [
+      "Khung vận hành công khai của đơn vị: Jungle Spa kết hợp trị liệu truyền thống Việt Nam và kỹ thuật phương Tây",
+      "Có chương trình wellness thường xuyên gồm yoga, thiền và sound healing",
+      "Có hạ tầng chuyên biệt: 2 phòng trị liệu, sauna, steam room, yoga sala và fitness centre",
+      "Chưa ghi nhận chứng nhận wellness độc lập; dữ liệu hiện được xác minh từ nguồn công khai"
+    ],
+    "nguonThamKhao": [
+      "https://anlam.com/ninh-van-bay/our-retreat/",
+      "https://anlam.com/ninh-van-bay/wellnessandspa/",
+      "https://anlam.com/wp-content/uploads/2024/07/NVB_Tourbook-and-Retreat-Activities.pdf"
+    ],
+    "ngayXacMinh": "2026-09-18",
+    "daXacMinhDoiTac": false
+  },
+  {
+    "id": "p-jiva-hoa-lu",
+    "slug": "jiva-hoa-lu-retreat",
+    "name": "Jiva Hoa Lư Retreat",
+    "type": "Retreat",
+    "region": "Ninh Bình",
+    "images": [
+      {
+        "seed": "jiva-hoa-lu-1",
+        "alt": "Toàn cảnh Jiva Hoa Lư Retreat giữa núi đá vôi Ninh Bình",
+        "kind": "image",
+        "src": "https://lucidcm.imgix.net/95182/Hotel/61143/Image/T8wgiIHeEq2RIE9DQ0Jw_Hero%20Shot.jpg.jpg?h=1173&w=660"
+      },
+      {
+        "seed": "jiva-hoa-lu-2",
+        "alt": "Hồ bơi của Jiva Hoa Lư Retreat nhìn ra cảnh quan xanh",
+        "kind": "image",
+        "src": "https://lucidcm.imgix.net/95182/Hotel/61143/Image/g2srzuTk5kWCnzc01sICPg_Swimming%20Pool.jpg.jpg?h=1173&w=660"
+      },
+      {
+        "seed": "jiva-hoa-lu-3",
+        "alt": "Không gian Chỉ Quán Spa tại Jiva Hoa Lư Retreat",
+        "kind": "image",
+        "src": "https://lucidcm.imgix.net/95182/Hotel/61143/Image/NyERmYd5HUWPgVkeppr8OA_Chi_%20Qua_n%20Spa%202.jpg.jpg?h=1173&w=660"
+      },
+      {
+        "seed": "jiva-hoa-lu-4",
+        "alt": "Trà thất tại Jiva Hoa Lư Retreat",
+        "kind": "image",
+        "src": "https://lucidcm.imgix.net/95182/Hotel/61143/Image/ZiYvCrmP0STVua8zbfPJg_Tea%20House%202.jpg.jpg?h=1173&w=660"
+      }
+    ],
+    "description": "Jiva Hoa Lư Retreat nằm trong thung lũng gần đền Thái Vi, giữa cảnh quan núi đá vôi của quần thể Tràng An. Không gian nghỉ lấy cảm hứng từ kiến trúc làng quê Bắc Bộ; Chỉ Quán Spa, yoga, thiền, massage Việt Nam và trà thất tạo thành trải nghiệm nghỉ chậm gắn với văn hóa địa phương.",
+    "highlights": [
+      "Nằm trong vùng lõi di sản UNESCO Tràng An",
+      "Đa dạng phòng và villa từ 32m² đến nhà riêng 179m²",
+      "Chỉ Quán Spa, yoga, thiền, massage Việt Nam và trà thất",
+      "Thành viên SLH Considerate Collection, có trạng thái Quality Assured / Mystery Inspected",
+      "Giảm nhựa dùng một lần, dùng pin mặt trời và tái sử dụng nước xám",
+      "Thông tin cần đối tác xác nhận trước khi mở bán"
+    ],
+    "nganh": [
+      "Giảm căng thẳng & Phục hồi năng lượng",
+      "Làm đẹp & Thư giãn"
+    ],
+    "loaiHinh": [
+      "Spa & Làm đẹp",
+      "Thiên nhiên & Sinh thái"
+    ],
+    "coYeuToVanHoaVungMien": true,
+    "mucCaoNhat": 3,
+    "giaThamKhao": 0,
+    "giaUnit": "đêm",
+    "trangThai": "Tạm dừng",
+    "roomTypes": [],
+    "tienIch": [
+      "Chỉ Quán Spa",
+      "Yoga và thiền có hướng dẫn",
+      "Trà thất và nghi thức trà Việt",
+      "Hồ bơi, gym, sauna và jacuzzi",
+      "Xe đạp và xe điện trong khu nghỉ"
+    ],
+    "diemDenLanCan": [
+      {
+        "ten": "Đền Thái Vi",
+        "khoangCach": "Chưa xác minh"
+      },
+      {
+        "ten": "Hang Múa",
+        "khoangCach": "Chưa xác minh"
+      }
+    ],
+    "tieuChuanWellness": [
+      "Chỉ Quán Spa có menu trị liệu công khai; yoga, thiền và massage Việt Nam là một phần trải nghiệm wellness",
+      "SLH xếp vào Considerate Collection và công bố trạng thái Quality Assured / Mystery Inspected",
+      "Tiêu chuẩn SLH nêu trên là kiểm định chất lượng nghỉ dưỡng và bền vững, không phải chứng nhận y khoa hoặc chứng nhận wellness độc lập"
+    ],
+    "nguonThamKhao": [
+      "https://jivahoaluretreat.com/",
+      "https://jivahoaluretreat.com/wp-content/uploads/2023/10/Menu-Chi-Quan-Spa.pdf",
+      "https://slh.com/hotels/jiva-hoa-lu-retreat"
+    ],
+    "ngayXacMinh": "2026-09-18",
+    "daXacMinhDoiTac": false
+  },
+  {
+    "id": "p-an-nhien-retreat",
+    "slug": "an-nhien-retreat-phu-quoc",
+    "name": "An Nhiên Retreat Phú Quốc",
+    "type": "Retreat",
+    "region": "Phú Quốc",
+    "images": [
+      {
+        "seed": "an-nhien-retreat-1",
+        "alt": "Hồ bơi trong khuôn viên An Nhiên Retreat Phú Quốc",
+        "kind": "image",
+        "src": "https://static.wixstatic.com/media/8ff780_aeb8b028d9af44f08aaa1e2447fab21c~mv2.jpg/v1/crop/x_0%2Cy_293%2Cw_2048%2Ch_743/fill/w_980%2Ch_356%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/352683534_682892973848433_8730669474219180764_n.jpg"
+      },
+      {
+        "seed": "an-nhien-retreat-2",
+        "alt": "Khu vườn và trải nghiệm garden-to-table tại An Nhiên Retreat",
+        "kind": "image",
+        "src": "https://static.wixstatic.com/media/8ff780_a482ff80afbb4f11b073564ff7f0c8f0~mv2.png/v1/fill/w_980%2Ch_735%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/IMG_3353_HEIC.png"
+      },
+      {
+        "seed": "an-nhien-retreat-3",
+        "alt": "Khách nghỉ dưỡng trong không gian xanh tại An Nhiên Retreat Phú Quốc",
+        "kind": "image",
+        "src": "https://static.wixstatic.com/media/8ff780_73eeff25e0cb4b7fa50042da6f132a20~mv2.jpg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/FILE118_JPG.jpg"
+      }
+    ],
+    "description": "An Nhiên Retreat là khu nghỉ quy mô nhỏ tại Phú Quốc, kết hợp nghỉ dưỡng với yoga miễn phí hằng ngày, massage, thiền và các kỳ yoga retreat. Nhà hàng Fu Wok theo hướng garden-to-table, sử dụng một phần thảo mộc và rau trồng tại vườn của khu nghỉ.",
+    "highlights": [
+      "Yoga miễn phí hằng ngày cho khách nghỉ dưỡng",
+      "Vườn thảo mộc/rau tự trồng phục vụ bếp tại chỗ",
+      "Có kỳ yoga retreat kết hợp thiền, massage và nghi thức",
+      "Các phòng chính rộng khoảng 27m², có hồ bơi vườn và sauna tre",
+      "Thông tin cần đối tác xác nhận trước khi mở bán"
+    ],
+    "nganh": [
+      "Cân bằng cảm xúc & Chánh niệm"
+    ],
+    "loaiHinh": [
+      "Vận động & Thân-tâm"
+    ],
+    "coYeuToVanHoaVungMien": false,
+    "mucCaoNhat": 2,
+    "giaThamKhao": 0,
+    "giaUnit": "đêm",
+    "trangThai": "Tạm dừng",
+    "roomTypes": [],
+    "tienIch": [
+      "Yoga hằng ngày",
+      "Hồ bơi trong vườn",
+      "Sauna tre",
+      "Nhà hàng Fu Wok garden-to-table",
+      "Bãi biển cách khu nghỉ khoảng một phút đi bộ"
+    ],
+    "diemDenLanCan": [],
+    "tieuChuanWellness": [
+      "Khung vận hành công khai của đơn vị: yoga miễn phí hằng ngày cho khách nghỉ dưỡng",
+      "Có retreat yoga theo đợt, kết hợp thiền, massage và nghi thức",
+      "Mô hình wellness quy mô nhỏ; chưa ghi nhận kiểm định wellness độc lập hoặc dịch vụ y khoa"
+    ],
+    "nguonThamKhao": [
+      "https://www.annhienretreat.vn/",
+      "https://www.annhienretreat.vn/post/guest-information",
+      "https://www.annhienretreat.vn/blank-1"
+    ],
+    "ngayXacMinh": "2026-09-18",
+    "daXacMinhDoiTac": false
+  },
+  {
+    "id": "p-tia-wellness-resort",
+    "slug": "tia-wellness-resort-da-nang",
+    "name": "TIA Wellness Resort",
+    "type": "Retreat",
+    "region": "Đà Nẵng",
+    "images": [
+      {
+        "seed": "tia-wellness-resort-1",
+        "alt": "Không gian nghỉ bên biển tại TIA Wellness Resort Đà Nẵng",
+        "kind": "image",
+        "src": "https://tiawellnessresort.com/wp-content/uploads/2026/03/TIA-BEACH-LIVING-3.webp"
+      },
+      {
+        "seed": "tia-wellness-resort-2",
+        "alt": "Trung tâm wellness của TIA Wellness Resort",
+        "kind": "image",
+        "src": "https://tiawellnessresort.com/wp-content/uploads/2026/03/TIA-WELLNESS-CENTRE-22.webp"
+      },
+      {
+        "seed": "tia-wellness-resort-3",
+        "alt": "Chương trình Wellness Inclusive tại TIA Wellness Resort",
+        "kind": "image",
+        "src": "https://tiawellnessresort.com/wp-content/uploads/2026/01/Wellness-Inclusive-1.png"
+      },
+      {
+        "seed": "tia-wellness-resort-4",
+        "alt": "Chương trình Retreat Inclusive tại TIA Wellness Resort",
+        "kind": "image",
+        "src": "https://tiawellnessresort.com/wp-content/uploads/2026/01/Retreat-Inclusive.jpg"
+      }
+    ],
+    "description": "TIA Wellness Resort là khu nghỉ wellness bên biển Đà Nẵng, phát triển từ Fusion Maia và vận hành theo hai mô hình Wellness Inclusive và Retreat Inclusive. Trị liệu, breathwork, yoga, vận động, dinh dưỡng thực vật và hướng dẫn cá nhân được tích hợp vào kỳ nghỉ dưỡng thay vì chỉ bán như dịch vụ spa rời.",
+    "highlights": [
+      "Wellness Inclusive gồm hai trị liệu mỗi đêm, tổng 80 phút mỗi khách",
+      "Retreat Inclusive thêm trị liệu retreat, thực đơn thực vật toàn phần và wellness guide riêng",
+      "Private Retreat 4 hoặc 7 đêm có coaching 1-kèm-1 và lịch trị liệu thiết kế theo mục tiêu",
+      "Private pool villa và bữa sáng phục vụ cả ngày",
+      "Thông tin cần đối tác xác nhận trước khi mở bán"
+    ],
+    "nganh": [
+      "Giảm căng thẳng & Phục hồi năng lượng",
+      "Cân bằng cảm xúc & Chánh niệm",
+      "Tăng cường thể lực",
+      "Làm đẹp & Thư giãn"
+    ],
+    "loaiHinh": [
+      "Ăn ngủ & Dinh dưỡng",
+      "Spa & Làm đẹp",
+      "Vận động & Thân-tâm",
+      "Sức khỏe tinh thần"
+    ],
+    "coYeuToVanHoaVungMien": false,
+    "mucCaoNhat": 3,
+    "giaThamKhao": 0,
+    "giaUnit": "đêm",
+    "trangThai": "Tạm dừng",
+    "roomTypes": [],
+    "tienIch": [
+      "Private pool villa",
+      "Trung tâm wellness và phòng trị liệu",
+      "Yoga, breathwork, HIIT và creative workshop",
+      "Thực đơn plant-based cho gói Retreat Inclusive",
+      "Wellness guide cá nhân cho khách retreat"
+    ],
+    "diemDenLanCan": [],
+    "tieuChuanWellness": [
+      "Wellness Inclusive: 2 trị liệu mỗi đêm, tổng 80 phút mỗi khách, kèm thực hành wellness hằng ngày",
+      "Retreat Inclusive: thêm 60 phút retreat therapy mỗi đêm, full-board plant-based, tư vấn riêng và wellness guide",
+      "Private Retreat 4 hoặc 7 đêm: chương trình cá nhân hóa, coaching 1-kèm-1 và khoảng 140 phút trị liệu mỗi đêm",
+      "Đây là khung vận hành do TIA công bố, không được mô tả như chứng nhận y khoa độc lập"
+    ],
+    "nguonThamKhao": [
+      "https://tiawellnessresort.com/",
+      "https://tiawellnessresort.com/tia-wellness-resort-retreat-programs-schedule/",
+      "https://tiawellnessresort.com/wp-content/uploads/2025/07/TIA-RETREAT-INCLUSIVE-MENU-VN.pdf"
+    ],
+    "ngayXacMinh": "2026-09-18",
+    "daXacMinhDoiTac": false
+  },
+  {
+    "id": "p-amanoi",
+    "slug": "amanoi-wellness-retreat-vinh-hy",
+    "name": "Amanoi",
+    "type": "Retreat",
+    "region": "Khánh Hòa",
+    "images": [
+      {
+        "seed": "amanoi-1",
+        "alt": "Yoga Pavilion trên hồ sen tại Amanoi",
+        "kind": "image",
+        "src": "https://www.aman.com/sites/default/files/styles/central_carousel_small/public/2024-12/amanoi_vietnam_-_wellness.webp?itok=h7LDAxPb"
+      },
+      {
+        "seed": "amanoi-2",
+        "alt": "Không gian trị liệu spa tại Amanoi",
+        "kind": "image",
+        "src": "https://www.aman.com/sites/default/files/styles/central_carousel_small/public/2021-03/Amanoi_Gallery_22.webp?itok=Or64C9an"
+      },
+      {
+        "seed": "amanoi-3",
+        "alt": "Nhà spa bên hồ và cảnh quan núi tại Amanoi",
+        "kind": "image",
+        "src": "https://www.aman.com/sites/default/files/styles/central_carousel_small/public/2021-03/Amanoi_Gallery_23.webp?itok=XmLtWlRG"
+      },
+      {
+        "seed": "amanoi-4",
+        "alt": "Liệu trình wellness riêng tại Amanoi",
+        "kind": "image",
+        "src": "https://www.aman.com/sites/default/files/styles/mobile_xl_766_1/public/2025-01/amanoivietnam_-_wellness_spa_treatment.webp?itok=osLHWKSP"
+      }
+    ],
+    "description": "Amanoi nằm bên vịnh Vĩnh Hy, trong cảnh quan Núi Chúa, với Aman Spa bên hồ sen và hai Wellness Pool Villa dành riêng cho hành trình chăm sóc sức khỏe. Chương trình kết hợp vận động, thủy trị liệu, trị liệu phục hồi, yoga, breathwork, thiền và liệu pháp lấy cảm hứng từ Việt Nam.",
+    "highlights": [
+      "Hai Wellness Pool Villa có phòng trị liệu đôi và hệ thống nhiệt trị liệu riêng",
+      "Yoga Pavilion trên hồ sen, Pilates Reformer và phòng gym",
+      "Holistic Wellness Journeys kéo dài từ một đến ba đêm",
+      "Wellness Hideaway gồm trị liệu hằng ngày, ẩm thực và nghi lễ Chăm trong gói ba đêm",
+      "Thông tin cần đối tác xác nhận trước khi mở bán"
+    ],
+    "nganh": [
+      "Giảm căng thẳng & Phục hồi năng lượng",
+      "Cân bằng cảm xúc & Chánh niệm",
+      "Tăng cường thể lực",
+      "Làm đẹp & Thư giãn"
+    ],
+    "loaiHinh": [
+      "Spa & Làm đẹp",
+      "Vận động & Thân-tâm",
+      "Thiên nhiên & Sinh thái"
+    ],
+    "coYeuToVanHoaVungMien": true,
+    "mucCaoNhat": 3,
+    "giaThamKhao": 0,
+    "giaUnit": "đêm",
+    "trangThai": "Tạm dừng",
+    "roomTypes": [],
+    "tienIch": [
+      "Aman Spa bên hồ sen",
+      "Hai khu hydrotherapy nhìn hồ",
+      "Hammam, banya, steam room, jacuzzi và hồ ngâm lạnh",
+      "Yoga Pavilion và Pilates studio",
+      "Năm phòng trị liệu đôi và trung tâm thể hình"
+    ],
+    "diemDenLanCan": [],
+    "tieuChuanWellness": [
+      "Chương trình do chuyên gia wellness tại chỗ thiết kế, có thể cá nhân hóa theo nhu cầu khách",
+      "Holistic Wellness Journeys kết hợp vận động, thủy trị liệu và trị liệu phục hồi trong 1–3 đêm",
+      "Hai Wellness Pool Villa tích hợp hammam hoặc banya, phòng trị liệu đôi và trị liệu viên riêng",
+      "Nguồn chính thức công bố hạ tầng và quy trình vận hành; chưa dùng thông tin này như chứng nhận y khoa độc lập"
+    ],
+    "nguonThamKhao": [
+      "https://www.aman.com/resorts/amanoi/wellness",
+      "https://www.aman.com/resorts/amanoi/accommodation/wellness-villas",
+      "https://www.aman.com/resorts/amanoi/exclusives/wellness-hideaway"
+    ],
+    "ngayXacMinh": "2026-09-18",
+    "daXacMinhDoiTac": false
+  },
+  {
+    "id": "p-six-senses-ninh-van-bay",
+    "slug": "six-senses-ninh-van-bay-wellness",
+    "name": "Six Senses Ninh Van Bay",
+    "type": "Retreat",
+    "region": "Khánh Hòa",
+    "images": [
+      {
+        "seed": "six-senses-ninh-van-bay-1",
+        "alt": "Cầu tàu và vịnh biển tại Six Senses Ninh Van Bay",
+        "kind": "image",
+        "src": "https://media.sixsenses.com/B60H3R33/at/2xgq98n8ztcr599hbfx8skv/Jetty5.jpg?fit=crop&height=405&width=648"
+      },
+      {
+        "seed": "six-senses-ninh-van-bay-2",
+        "alt": "Thực hành yoga trên đá bên biển tại Six Senses Ninh Van Bay",
+        "kind": "image",
+        "src": "https://media.sixsenses.com/B60H3R33/at/k48t64hg6sgv73sf4tgvpkw/Yoga_On_The_Rocks__380-ORIGINAL_.jpg?fit=crop&height=405&width=648"
+      },
+      {
+        "seed": "six-senses-ninh-van-bay-3",
+        "alt": "Khu spa giữa thiên nhiên tại Six Senses Ninh Van Bay",
+        "kind": "image",
+        "src": "https://media.sixsenses.com/B60H3R33/at/bj7p3bs3c4578rjtgm78pv7z/Spa_Reception5.jpg?fit=crop&height=405&width=648"
+      },
+      {
+        "seed": "six-senses-ninh-van-bay-4",
+        "alt": "Biệt thự hồ bơi trên đồi tại Six Senses Ninh Van Bay",
+        "kind": "image",
+        "src": "https://media.sixsenses.com/B60H3R33/at/fcmtmpgqg4btb3x7gvftqrcg/1_Hilltop_Reserve_exterior2.jpg?fit=crop&height=405&width=648"
+      }
+    ],
+    "description": "Six Senses Ninh Van Bay vận hành spa và các chương trình wellness cá nhân hóa giữa cảnh quan vịnh Ninh Vân. Khách có thể thực hiện wellness screening để xây dựng hành trình trị liệu, vận động và dinh dưỡng; các chương trình công khai gồm Sleep, Detox, Discover Yoga và Fitness.",
+    "highlights": [
+      "Wellness screening đo chỉ số sinh lý không xâm lấn và tư vấn lối sống",
+      "Bốn hướng chương trình chính: Sleep, Detox, Discover Yoga và Fitness",
+      "Có biohacking room, meditation shala, Alchemy Bar và yoga deck",
+      "Retreat chuyên gia kết hợp yoga, thiền, trị liệu và workshop",
+      "Thông tin cần đối tác xác nhận trước khi mở bán"
+    ],
+    "nganh": [
+      "Giảm căng thẳng & Phục hồi năng lượng",
+      "Cải thiện giấc ngủ",
+      "Thanh lọc cơ thể",
+      "Tăng cường thể lực",
+      "Cân bằng cảm xúc & Chánh niệm"
+    ],
+    "loaiHinh": [
+      "Ăn ngủ & Dinh dưỡng",
+      "Spa & Làm đẹp",
+      "Vận động & Thân-tâm",
+      "Thiên nhiên & Sinh thái"
+    ],
+    "coYeuToVanHoaVungMien": true,
+    "mucCaoNhat": 3,
+    "giaThamKhao": 0,
+    "giaUnit": "đêm",
+    "trangThai": "Tạm dừng",
+    "roomTypes": [],
+    "tienIch": [
+      "Phòng tư vấn wellness và sáu phòng trị liệu đôi",
+      "Steam room, sauna và khu thư giãn",
+      "Biohacking room và outdoor jungle gym",
+      "Meditation Shala, Alchemy Bar và yoga deck",
+      "Vườn thảo dược dùng cho spa"
+    ],
+    "diemDenLanCan": [],
+    "tieuChuanWellness": [
+      "Wellness screening không xâm lấn kết hợp trao đổi lối sống để thiết kế chương trình nhiều ngày",
+      "Chương trình công khai có cấu trúc theo mục tiêu Sleep, Detox, Discover Yoga và Fitness",
+      "Đội ngũ chuyên gia tại chỗ và visiting practitioners phụ trách tư vấn, yoga, thiền và trị liệu",
+      "Khung wellness thuộc hệ thống Six Senses; không mô tả như chứng nhận y khoa độc lập"
+    ],
+    "nguonThamKhao": [
+      "https://www.sixsenses.com/en/hotels-resorts/asia-the-pacific/vietnam/ninh-van-bay/wellness-spa/",
+      "https://www.sixsenses.com/en/hotels-resorts/asia-the-pacific/vietnam/ninh-van-bay/wellness-spa/retreats/",
+      "https://www.sixsenses.com/en/hotels-resorts/asia-the-pacific/vietnam/ninh-van-bay/gallery/"
+    ],
+    "ngayXacMinh": "2026-09-18",
+    "daXacMinhDoiTac": false
+  },
+  {
+    "id": "p-alba-wellness-valley",
+    "slug": "alba-wellness-valley-hue",
+    "name": "Alba Wellness Valley by Fusion",
+    "type": "Retreat",
+    "region": "Huế",
+    "images": [
+      {
+        "seed": "alba-wellness-valley-1",
+        "alt": "Cảnh quan xanh tại Alba Wellness Valley by Fusion",
+        "kind": "image",
+        "src": "https://fusion-collection.com/albawellnessvalleyhue/wp-content/uploads/2025/03/DSCF5657-Edited-scaled.jpg"
+      },
+      {
+        "seed": "alba-wellness-valley-2",
+        "alt": "Toàn cảnh Alba Wellness Valley giữa thiên nhiên Huế",
+        "kind": "image",
+        "src": "https://fusion-collection.com/albawellnessvalleyhue/wp-content/uploads/2026/02/DJI_20240507070818_0112_D-scaled.jpg"
+      },
+      {
+        "seed": "alba-wellness-valley-3",
+        "alt": "Trải nghiệm onsen với nguồn khoáng nóng Thanh Tân tại Alba",
+        "kind": "image",
+        "src": "https://fusion-collection.com/albawellnessvalleyhue/wp-content/uploads/2020/08/045-Hotspring-with-models-IMG_0859_JV-scaled.jpg"
+      },
+      {
+        "seed": "alba-wellness-valley-4",
+        "alt": "Nghi thức tắm ngồi trong hành trình onsen tám bước tại Alba",
+        "kind": "image",
+        "src": "https://fusion-collection.com/albawellnessvalleyhue/wp-content/uploads/2025/07/AWR_Seated_Bath-scaled.jpg"
+      }
+    ],
+    "description": "Alba Wellness Valley by Fusion là khu nghỉ dưỡng sức khỏe tại Huế, phát triển quanh nguồn khoáng nóng Thanh Tân. Trải nghiệm cốt lõi gồm hành trình onsen tám bước, tắm khoáng, spa, yoga, thiền, Tai Chi, vận động ngoài trời và các retreat theo kỳ trăng hoặc theo mục tiêu phục hồi.",
+    "highlights": [
+      "Hành trình onsen tám bước dùng nguồn khoáng nóng Thanh Tân",
+      "Lịch retreat trăng tròn và trăng non với sound healing, thiền nổi và nghi thức ngoài thiên nhiên",
+      "Yoga, thiền, Tai Chi và hoạt động đi bộ/đạp xe giữa rừng",
+      "Nông trại hữu cơ và trải nghiệm thảo dược bản địa",
+      "Thông tin cần đối tác xác nhận trước khi mở bán"
+    ],
+    "nganh": [
+      "Giảm căng thẳng & Phục hồi năng lượng",
+      "Cải thiện giấc ngủ",
+      "Cân bằng cảm xúc & Chánh niệm",
+      "Tăng cường thể lực"
+    ],
+    "loaiHinh": [
+      "Spa & Làm đẹp",
+      "Vận động & Thân-tâm",
+      "Thiên nhiên & Sinh thái"
+    ],
+    "coYeuToVanHoaVungMien": true,
+    "mucCaoNhat": 2,
+    "giaThamKhao": 0,
+    "giaUnit": "đêm",
+    "trangThai": "Tạm dừng",
+    "roomTypes": [],
+    "tienIch": [
+      "Onsen và hồ khoáng nóng Thanh Tân",
+      "Spa và các hoạt động wellness hằng ngày",
+      "Yoga, thiền và Tai Chi",
+      "Nông trại hữu cơ",
+      "Đường đi bộ, xe đạp, zipline và highwire"
+    ],
+    "diemDenLanCan": [],
+    "tieuChuanWellness": [
+      "Quy trình onsen tám bước được đơn vị công bố, sử dụng nguồn khoáng nóng Thanh Tân",
+      "Có lịch retreat theo kỳ trăng với sound healing, floating meditation và nghi thức trong thiên nhiên",
+      "Mô hình kết hợp khoáng nóng, vận động thân-tâm, spa, dinh dưỡng và thiên nhiên",
+      "Chưa ghi nhận chứng nhận wellness độc lập; dữ liệu hiện được xác minh từ nguồn công khai"
+    ],
+    "nguonThamKhao": [
+      "https://fusion-collection.com/albawellnessvalleyhue/en/features/",
+      "https://fusion-collection.com/albawellnessvalleyhue/en/contact-us/",
+      "https://fusion-collection.com/albawellnessvalleyhue/wp-content/uploads/2025/11/Return-to-Wholeness-ENG-Offer-Digital.pdf"
+    ],
+    "ngayXacMinh": "2026-09-18",
+    "daXacMinhDoiTac": false
   }
 ]

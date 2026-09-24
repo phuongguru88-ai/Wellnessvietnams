@@ -23,7 +23,7 @@ export async function createRoomTypeAction(
   const actor = await getActor();
   const property = await getPropertyById(propertyId);
   if (!actor || !property || !ownsProperty(actor, propertyId)) {
-    return { errors: { name: "Bạn không có quyền thêm hạng phòng cho nơi lưu trú này." } };
+    return { errors: { name: "Bạn không có quyền thêm hạng phòng cho nơi nghỉ dưỡng này." } };
   }
 
   const result = parseRoomTypeForm(formData, property.giaUnit);
@@ -31,9 +31,9 @@ export async function createRoomTypeAction(
 
   const room = await createRoomType(propertyId, result.data);
   if (!room) {
-    return { errors: { name: "Không tìm thấy nơi lưu trú này (có thể đã bị xoá)." } };
+    return { errors: { name: "Không tìm thấy nơi nghỉ dưỡng này (có thể đã bị xoá)." } };
   }
-  redirect(`/quan-tri/luu-tru/${propertyId}/phong?created=1`);
+  redirect(`/quan-tri/nghi-duong/${propertyId}/phong?created=1`);
 }
 
 export async function updateRoomTypeAction(
@@ -55,7 +55,7 @@ export async function updateRoomTypeAction(
   if (!room) {
     return { errors: { name: "Không tìm thấy hạng phòng này (có thể đã bị xoá)." } };
   }
-  redirect(`/quan-tri/luu-tru/${propertyId}/phong?saved=1`);
+  redirect(`/quan-tri/nghi-duong/${propertyId}/phong?saved=1`);
 }
 
 export async function deleteRoomTypeAction(propertyId: string, roomId: string) {
@@ -63,10 +63,10 @@ export async function deleteRoomTypeAction(propertyId: string, roomId: string) {
   const existing = await getRoomType(propertyId, roomId);
   if (!actor || !existing || !ownsProperty(actor, propertyId)) {
     redirect(
-      `/quan-tri/luu-tru/${propertyId}/phong?error=${encodeURIComponent("Bạn không có quyền xoá hạng phòng này.")}`,
+      `/quan-tri/nghi-duong/${propertyId}/phong?error=${encodeURIComponent("Bạn không có quyền xoá hạng phòng này.")}`,
     );
   }
 
   await deleteRoomType(propertyId, roomId);
-  redirect(`/quan-tri/luu-tru/${propertyId}/phong?deleted=1`);
+  redirect(`/quan-tri/nghi-duong/${propertyId}/phong?deleted=1`);
 }

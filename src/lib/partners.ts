@@ -69,7 +69,7 @@ export function parsePartnerForm(
 
   const propertyIds = fd.getAll("propertyIds").map(String);
   if (role === "partner" && propertyIds.length === 0) {
-    errors.propertyIds = "Chọn ít nhất một nơi lưu trú cho tài khoản đối tác.";
+    errors.propertyIds = "Chọn ít nhất một nơi nghỉ dưỡng cho tài khoản đối tác.";
   }
 
   const active = fd.get("active") !== null;

@@ -28,8 +28,8 @@ export async function generateMetadata({
       ? `Chương trình wellness: ${label}`
       : "Chương trình wellness nhiều ngày tại Việt Nam",
     description: label
-      ? `Các chương trình wellness nhiều ngày theo ${label}: lưu trú, ăn uống theo thể trạng, trị liệu và người đồng hành trong một gói.`
-      : "Combo hành trình nhiều ngày: dưỡng sinh theo y học phương đông, thanh lọc tinh thần, nghỉ tân hôn. Đã gộp lưu trú, ăn uống, trị liệu và người đồng hành.",
+      ? `Các chương trình wellness nhiều ngày theo ${label}: nghỉ dưỡng, ăn uống theo thể trạng, trị liệu và người đồng hành trong một gói.`
+      : "Combo hành trình nhiều ngày: dưỡng sinh theo y học phương đông, thanh lọc tinh thần, nghỉ tân hôn. Đã gộp nghỉ dưỡng, ăn uống, trị liệu và người đồng hành.",
     alternates: { canonical: "/chuong-trinh" },
     robots: label ? { index: false, follow: true } : undefined,
   };

@@ -43,8 +43,8 @@ export default async function HomePage() {
 
   const TABS = [
     {
-      href: "/luu-tru",
-      label: "Lưu trú",
+      href: "/nghi-duong",
+      label: "Nghỉ dưỡng",
       icon: STAY_ICON,
       count: properties.length,
       blurb:
@@ -56,7 +56,7 @@ export default async function HomePage() {
       icon: PROGRAM_ICON,
       count: programs.length,
       blurb:
-        "Combo hành trình nhiều ngày: lưu trú, ăn uống theo thể trạng, trị liệu và người đồng hành đã gộp thành một gói.",
+        "Combo hành trình nhiều ngày: nghỉ dưỡng, ăn uống theo thể trạng, trị liệu và người đồng hành đã gộp thành một gói.",
     },
     {
       href: "/trai-nghiem",
@@ -95,9 +95,9 @@ export default async function HomePage() {
                 <PhoneCall aria-hidden size={15} strokeWidth={2} />
                 Nhận tư vấn miễn phí
               </Link>
-              <Link href="/luu-tru" className="btn btn-ghost">
+              <Link href="/nghi-duong" className="btn btn-ghost">
                 <STAY_ICON aria-hidden size={15} strokeWidth={2} />
-                Xem nơi lưu trú
+                Xem nơi nghỉ dưỡng
               </Link>
             </div>
 
@@ -214,7 +214,7 @@ export default async function HomePage() {
             return (
               <li key={ng}>
                 <Link
-                  href={`/luu-tru?nganh=${encodeURIComponent(ng)}`}
+                  href={`/nghi-duong?nganh=${encodeURIComponent(ng)}`}
                   className="flex items-center gap-3 rounded-card border border-line px-5 py-4 transition hover:border-ink-soft hover:bg-card"
                 >
                   <Icon aria-hidden size={18} strokeWidth={1.75} className="shrink-0 text-turmeric" />

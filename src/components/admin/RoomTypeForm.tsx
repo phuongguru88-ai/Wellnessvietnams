@@ -5,7 +5,7 @@ import { useActionState } from "react";
 
 import { TextArea, TextField } from "./fields";
 import { MediaField } from "./MediaField";
-import type { RoomTypeFormState } from "@/app/quan-tri/luu-tru/[id]/phong/actions";
+import type { RoomTypeFormState } from "@/app/quan-tri/nghi-duong/[id]/phong/actions";
 import { serializeImageRef } from "@/lib/media";
 import type { RoomType } from "@/lib/types";
 

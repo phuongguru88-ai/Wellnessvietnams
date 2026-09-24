@@ -24,13 +24,13 @@ export default async function NewExperiencePage() {
         <p className="mt-4 text-ink-soft">
           {actor.role === "admin" ? (
             <>
-              Cần có ít nhất một nơi lưu trú trước khi tạo trải nghiệm.{" "}
-              <Link href="/quan-tri/luu-tru/moi" className="font-semibold text-turmeric">
-                Thêm nơi lưu trú →
+              Cần có ít nhất một nơi nghỉ dưỡng trước khi tạo trải nghiệm.{" "}
+              <Link href="/quan-tri/nghi-duong/moi" className="font-semibold text-turmeric">
+                Thêm nơi nghỉ dưỡng →
               </Link>
             </>
           ) : (
-            "Tài khoản của bạn chưa được gán quản lý nơi lưu trú nào — liên hệ quản trị viên để được gán."
+            "Tài khoản của bạn chưa được gán quản lý nơi nghỉ dưỡng nào — liên hệ quản trị viên để được gán."
           )}
         </p>
       </div>

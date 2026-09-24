@@ -115,10 +115,10 @@ export default async function BaiVietDetail({
             <div className="mt-10 rounded-card border border-line bg-card p-6">
               <p className="text-sm text-ink-soft">Muốn trải nghiệm trực tiếp?</p>
               <Link
-                href={`/luu-tru?lh=${encodeURIComponent(article.chuyenMuc)}`}
+                href={`/nghi-duong?lh=${encodeURIComponent(article.chuyenMuc)}`}
                 className="mt-2 inline-flex items-center gap-1 font-semibold text-turmeric"
               >
-                Xem lưu trú theo {article.chuyenMuc} →
+                Xem nghỉ dưỡng theo {article.chuyenMuc} →
               </Link>
             </div>
           )}

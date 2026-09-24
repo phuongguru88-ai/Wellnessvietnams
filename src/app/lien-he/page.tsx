@@ -9,7 +9,7 @@ import { MUC_META, type Muc } from "@/lib/types";
 export const metadata: Metadata = {
   title: "Liên hệ tư vấn wellness miễn phí",
   description:
-    "Để lại họ tên, số điện thoại và thời gian dự kiến — tư vấn viên Wellnessvietnams gọi lại trong 24 giờ để cùng bạn chọn nơi lưu trú, chương trình hoặc buổi trải nghiệm phù hợp.",
+    "Để lại họ tên, số điện thoại và thời gian dự kiến — tư vấn viên Wellnessvietnams gọi lại trong 24 giờ để cùng bạn chọn nơi nghỉ dưỡng, chương trình hoặc buổi trải nghiệm phù hợp.",
   alternates: { canonical: "/lien-he" },
 };
 

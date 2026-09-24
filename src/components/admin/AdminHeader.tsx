@@ -8,7 +8,7 @@ import { ARTICLE_ICON, BOOKING_ICON, EXPERIENCE_ICON, PROGRAM_ICON, STAY_ICON } 
 const BASE_LINKS = [
   { href: "/quan-tri", label: "Tổng quan", icon: LayoutDashboard },
   { href: "/quan-tri/dat-phong", label: "Đặt phòng", icon: BOOKING_ICON },
-  { href: "/quan-tri/luu-tru", label: "Lưu trú", icon: STAY_ICON },
+  { href: "/quan-tri/nghi-duong", label: "Nghỉ dưỡng", icon: STAY_ICON },
   { href: "/quan-tri/chuong-trinh", label: "Chương trình", icon: PROGRAM_ICON },
   { href: "/quan-tri/trai-nghiem", label: "Trải nghiệm", icon: EXPERIENCE_ICON },
 ] as const;

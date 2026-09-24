@@ -6,6 +6,7 @@ import { CheckCircle2, ShieldAlert, Sparkles, Users, XCircle } from "lucide-reac
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
+import { ImageGrid } from "@/components/ImageGrid";
 import { LoaiHinhTags } from "@/components/LoaiHinhTag";
 import { Media } from "@/components/Media";
 import { MucBadge } from "@/components/MucBadge";
@@ -80,8 +81,6 @@ export default async function ProgramDetail({
     })),
   };
 
-  const [leadImage, ...extraImages] = program.images;
-
   const sections = [
     { id: "tong-quan", label: "Tổng quan" },
     { id: "phu-hop", label: "Dành cho ai" },
@@ -108,61 +107,46 @@ export default async function ProgramDetail({
       </div>
 
       <header className="shell pt-4">
-        {/* Hero hai cột: giới thiệu bên trái, ảnh lớn bên phải — đồng bộ với hero của trang Lưu trú. */}
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center lg:gap-14">
-          <div>
-            <p className="eyebrow flex items-center gap-1.5">
-              <PROGRAM_ICON aria-hidden size={14} strokeWidth={2} />
-              {program.durationLabel}
-              {property ? ` · ${property.name}, ${property.region}` : ""}
-            </p>
-            <h1 className="mt-2 text-[2.25rem] leading-[1.05] sm:text-5xl">{program.name}</h1>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <MucBadge muc={program.muc} />
-              <NganhTags values={program.nganh} />
-              <LoaiHinhTags values={program.loaiHinh} />
-              {program.trangThai !== "Đang mở bán" && (
-                <span className="rounded-full border border-line px-2.5 py-1 text-[11px] font-medium text-ink-soft">
-                  {program.trangThai}
-                </span>
-              )}
-            </div>
-            {program.coYeuToVanHoaVungMien && (
-              <p className="mt-3 flex items-center gap-1.5 text-xs font-medium text-moss">
-                <Sparkles aria-hidden size={13} strokeWidth={2} />
-                Có yếu tố văn hoá vùng miền — chữa lành từ tri thức bản địa
-              </p>
-            )}
-            <p className="mt-5 max-w-prose text-[15px] leading-relaxed text-ink-soft">
-              {program.summary}
-            </p>
-            {program.mucTieu.length > 0 && (
-              <p className="mt-3 text-sm text-ink-soft">Mục tiêu: {program.mucTieu.join(" · ")}</p>
-            )}
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <a href="#dat-cho" className="btn btn-primary">
-                Giữ chỗ ngay
-              </a>
-              <a href="#lich-trinh" className="btn btn-ghost">
-                Xem lịch trình
-              </a>
-            </div>
-          </div>
+        <ImageGrid images={program.images} />
 
-          <div className="overflow-hidden rounded-card border border-line">
-            <Media feature image={leadImage} className="aspect-[4/3] w-full" />
+        <div className="mt-8 max-w-4xl sm:mt-10">
+          <p className="eyebrow flex items-center gap-1.5">
+            <PROGRAM_ICON aria-hidden size={14} strokeWidth={2} />
+            {program.durationLabel}
+            {property ? ` · ${property.name}, ${property.region}` : ""}
+          </p>
+          <h1 className="mt-2 text-[2.25rem] leading-[1.05] sm:text-5xl">{program.name}</h1>
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <MucBadge muc={program.muc} />
+            <NganhTags values={program.nganh} />
+            <LoaiHinhTags values={program.loaiHinh} />
+            {program.trangThai !== "Đang mở bán" && (
+              <span className="rounded-full border border-line px-2.5 py-1 text-[11px] font-medium text-ink-soft">
+                {program.trangThai}
+              </span>
+            )}
+          </div>
+          {program.coYeuToVanHoaVungMien && (
+            <p className="mt-3 flex items-center gap-1.5 text-xs font-medium text-moss">
+              <Sparkles aria-hidden size={13} strokeWidth={2} />
+              Có yếu tố văn hoá vùng miền — chữa lành từ tri thức bản địa
+            </p>
+          )}
+          <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-ink-soft">
+            {program.summary}
+          </p>
+          {program.mucTieu.length > 0 && (
+            <p className="mt-3 text-sm text-ink-soft">Mục tiêu: {program.mucTieu.join(" · ")}</p>
+          )}
+          <div className="mt-7 flex flex-wrap items-center gap-3">
+            <a href="#dat-cho" className="btn btn-primary">
+              Giữ chỗ ngay
+            </a>
+            <a href="#lich-trinh" className="btn btn-ghost">
+              Xem lịch trình
+            </a>
           </div>
         </div>
-
-        {extraImages.length > 0 && (
-          <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {extraImages.slice(0, 4).map((img) => (
-              <div key={img.seed} className="overflow-hidden rounded-card border border-line">
-                <Media interactive={false} image={img} className="aspect-[4/3] w-full" />
-              </div>
-            ))}
-          </div>
-        )}
       </header>
 
       <ProgramSectionNav sections={sections} />
@@ -323,7 +307,7 @@ export default async function ProgramDetail({
             <section id="dia-diem" className="mt-12 scroll-mt-28">
               <h2 className="text-2xl">Diễn ra tại</h2>
               <Link
-                href={`/luu-tru/${property.slug}`}
+                href={`/nghi-duong/${property.slug}`}
                 className="group mt-4 flex flex-col gap-1 rounded-card border border-line p-6 transition hover:border-ink-soft hover:bg-card"
               >
                 <p className="eyebrow">
@@ -347,7 +331,7 @@ export default async function ProgramDetail({
               {formatPrice(program.price, program.priceUnit)}
             </p>
             <p className="mt-1 text-sm text-ink-soft">
-              Đã gồm lưu trú, các bữa ăn và toàn bộ buổi trị liệu trong lịch
+              Đã gồm nghỉ dưỡng, các bữa ăn và toàn bộ buổi trị liệu trong lịch
               trình. Chưa gồm di chuyển tới nơi.
             </p>
 

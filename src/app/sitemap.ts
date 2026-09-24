@@ -13,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticRoutes = [
     "",
-    "/luu-tru",
+    "/nghi-duong",
     "/chuong-trinh",
     "/trai-nghiem",
     "/kien-thuc",
@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const detailRoutes = [
-    ...properties.map((p) => `/luu-tru/${p.slug}`),
+    ...properties.map((p) => `/nghi-duong/${p.slug}`),
     ...programs.map((p) => `/chuong-trinh/${p.slug}`),
     ...experiences.map((e) => `/trai-nghiem/${e.slug}`),
     ...baiViet.map((b) => `/kien-thuc/${b.slug}`),

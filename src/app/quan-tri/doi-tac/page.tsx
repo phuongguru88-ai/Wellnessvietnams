@@ -34,7 +34,7 @@ export default async function AdminPartnersPage({
           <h1 className="mt-2 text-3xl">Tài khoản đối tác</h1>
           <p className="mt-2 text-sm text-ink-soft">
             Mỗi đối tác đăng nhập /quan-tri riêng bằng tên đăng nhập và mật khẩu của mình, chỉ thấy
-            và sửa được nơi lưu trú (cùng chương trình/trải nghiệm/đặt phòng liên quan) đã gán cho
+            và sửa được nơi nghỉ dưỡng (cùng chương trình/trải nghiệm/đặt phòng liên quan) đã gán cho
             họ ở đây.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default async function AdminPartnersPage({
                     ? "Toàn quyền"
                     : p.propertyIds.length > 0
                       ? p.propertyIds.map((id) => propertyById.get(id)?.name ?? "—").join(", ")
-                      : "Chưa gán nơi lưu trú nào"}
+                      : "Chưa gán nơi nghỉ dưỡng nào"}
                 </td>
                 <td className="px-4 py-3">
                   <span

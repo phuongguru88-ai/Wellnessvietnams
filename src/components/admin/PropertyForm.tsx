@@ -7,7 +7,7 @@ import { Rows } from "lucide-react";
 
 import { Checkbox, CheckboxGroup, RadioGroup, Select, TextArea, TextField } from "./fields";
 import { MediaField } from "./MediaField";
-import type { PropertyFormState } from "@/app/quan-tri/luu-tru/actions";
+import type { PropertyFormState } from "@/app/quan-tri/nghi-duong/actions";
 import { serializeImageRef } from "@/lib/media";
 import {
   LOAI_HINH,
@@ -128,12 +128,12 @@ export function PropertyForm({
         error={state?.errors?.images}
       />
 
-      {/* Hạng phòng giờ có trang quản trị riêng — mỗi hạng phòng một form + ảnh riêng thay vì gộp chung một ô văn bản khó soạn. Chỉ vào được sau khi nơi lưu trú đã tồn tại (cần initial.id để biết thêm vào property nào). */}
+      {/* Hạng phòng giờ có trang quản trị riêng — mỗi hạng phòng một form + ảnh riêng thay vì gộp chung một ô văn bản khó soạn. Chỉ vào được sau khi nơi nghỉ dưỡng đã tồn tại (cần initial.id để biết thêm vào property nào). */}
       <div className="flex flex-col gap-2">
         <label className="text-sm font-semibold text-ink">Hạng phòng</label>
         {initial ? (
           <Link
-            href={`/quan-tri/luu-tru/${initial.id}/phong`}
+            href={`/quan-tri/nghi-duong/${initial.id}/phong`}
             className="flex items-center gap-2 rounded-xl border border-line bg-bg px-3.5 py-2.5 text-sm font-medium text-ink hover:border-ink-soft"
           >
             <Rows aria-hidden size={15} strokeWidth={2} className="text-turmeric" />
@@ -143,7 +143,7 @@ export function PropertyForm({
           </Link>
         ) : (
           <p className="text-xs text-ink-soft">
-            Lưu nơi lưu trú trước, sau đó quay lại đây để thêm hạng phòng.
+            Lưu nơi nghỉ dưỡng trước, sau đó quay lại đây để thêm hạng phòng.
           </p>
         )}
       </div>
@@ -164,6 +164,39 @@ export function PropertyForm({
         rows={4}
         hint='Mỗi dòng theo định dạng "Tên | Khoảng cách", ví dụ: "Chợ phiên Đồng Văn | 15 phút đi bộ".'
         error={state?.errors?.diemDenLanCan}
+      />
+
+      <TextArea
+        label="Căn cứ wellness / retreat"
+        name="tieuChuanWellness"
+        defaultValue={initial?.tieuChuanWellness?.join("\n")}
+        rows={5}
+        hint="Mỗi dòng một căn cứ có thể kiểm chứng. Ghi rõ nếu là chương trình nội bộ hoặc kiểm định bên thứ ba."
+        error={state?.errors?.tieuChuanWellness}
+      />
+
+      <TextArea
+        label="Nguồn tham khảo"
+        name="nguonThamKhao"
+        defaultValue={initial?.nguonThamKhao?.join("\n")}
+        rows={4}
+        hint="Mỗi dòng một URL, ưu tiên website chính thức hoặc đơn vị kiểm định."
+        error={state?.errors?.nguonThamKhao}
+      />
+
+      <TextField
+        label="Ngày xác minh nguồn"
+        name="ngayXacMinh"
+        type="date"
+        defaultValue={initial?.ngayXacMinh}
+        error={state?.errors?.ngayXacMinh}
+      />
+
+      <Checkbox
+        label="Đã được đối tác xác nhận nội dung"
+        name="daXacMinhDoiTac"
+        defaultChecked={initial?.daXacMinhDoiTac}
+        hint="Không bật nếu dữ liệu mới chỉ được tổng hợp từ nguồn công khai."
       />
 
       <CheckboxGroup
@@ -201,7 +234,7 @@ export function PropertyForm({
         <button type="submit" disabled={pending} className="btn btn-primary disabled:opacity-60">
           {pending ? "Đang lưu…" : submitLabel}
         </button>
-        <Link href="/quan-tri/luu-tru" className="btn btn-ghost">
+        <Link href="/quan-tri/nghi-duong" className="btn btn-ghost">
           Huỷ
         </Link>
       </div>

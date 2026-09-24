@@ -1,6 +1,6 @@
 /**
  * 7 Ngành chính thức — trục filter chính của toàn bộ trang, trả lời câu hỏi
- * "Bạn đang cần điều gì?". Dùng chung cho cả 3 tab (Lưu trú / Chương trình /
+ * "Bạn đang cần điều gì?". Dùng chung cho cả 3 tab (Nghỉ dưỡng / Chương trình /
  * Trải nghiệm), thay cho vai trò trước đây của LOAI_HINH.
  */
 export const NGANH = [
@@ -43,7 +43,7 @@ export const MUC_META: Record<
     label: "Mức 1 – Tiện nghi",
     short: "Tiện nghi",
     description:
-      "Có sẵn tại nơi lưu trú, khách tự sử dụng, không cần người hỗ trợ.",
+      "Có sẵn tại nơi nghỉ dưỡng, khách tự sử dụng, không cần người hỗ trợ.",
   },
   2: {
     stars: "★★☆",
@@ -98,7 +98,7 @@ export interface ImageRef {
   thumbnailSrc?: string;
 }
 
-/** Một hạng phòng trong một nơi lưu trú — dùng để hiển thị tiêu chuẩn và cho khách chọn khi đặt phòng. */
+/** Một hạng phòng trong một nơi nghỉ dưỡng — dùng để hiển thị tiêu chuẩn và cho khách chọn khi đặt phòng. */
 export interface RoomType {
   /** Duy nhất trong phạm vi một Property (không phải toàn hệ thống). */
   id: string;
@@ -148,6 +148,18 @@ export interface Property {
   tienIch: string[];
   /** Điểm tham quan/tiện ích quanh khu vực, kèm khoảng cách. */
   diemDenLanCan: DiemDenLanCan[];
+  /**
+   * Căn cứ để xếp nơi nghỉ dưỡng vào nhóm wellness/retreat. Đây có thể là một
+   * chương trình vận hành công khai, quy trình nội bộ hoặc kiểm định bên thứ
+   * ba; không mặc định đồng nghĩa với chứng nhận y khoa.
+   */
+  tieuChuanWellness?: string[];
+  /** URL nguồn chính thức/đơn vị kiểm định đã dùng để biên tập dữ liệu. */
+  nguonThamKhao?: string[];
+  /** Ngày gần nhất đội ngũ kiểm tra lại các nguồn công khai, dạng YYYY-MM-DD. */
+  ngayXacMinh?: string;
+  /** Chỉ bật khi chính đơn vị đã duyệt nội dung; false = mới xác minh từ nguồn công khai. */
+  daXacMinhDoiTac?: boolean;
   /**
    * Chuẩn bị data model cho thanh toán "Combo Tiết Kiệm" (SME) — CHƯA có
    * luồng thanh toán thật, chưa có UI dùng field này ở giai đoạn 1. Tiền
@@ -385,7 +397,7 @@ export const BOOKING_STATUS = ["Chờ xác nhận", "Đã xác nhận", "Đã hu
 export type BookingStatus = (typeof BOOKING_STATUS)[number];
 
 /**
- * Yêu cầu đặt phòng gửi từ trang chi tiết Lưu trú. Đây là "giữ chỗ tạm" —
+ * Yêu cầu đặt phòng gửi từ trang chi tiết Nghỉ dưỡng. Đây là "giữ chỗ tạm" —
  * không khoá tồn kho, không thu tiền; tư vấn viên xác nhận phòng còn trống
  * qua điện thoại rồi đổi trạng thái trong trang quản trị.
  */

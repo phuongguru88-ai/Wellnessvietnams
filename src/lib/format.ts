@@ -5,6 +5,7 @@ export function formatVnd(value: number) {
 
 /** 2400000, "đêm" -> "2.400.000đ / đêm" */
 export function formatPrice(value: number, unit?: string) {
+  if (value <= 0) return "Liên hệ";
   return unit ? `${formatVnd(value)} / ${unit}` : formatVnd(value);
 }
 

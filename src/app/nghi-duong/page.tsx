@@ -28,18 +28,18 @@ export async function generateMetadata({
 
   return {
     title: label
-      ? `Lưu trú wellness: ${label}`
-      : "Lưu trú wellness: home, villa, resort & retreat tuyển chọn",
+      ? `Nghỉ dưỡng wellness: ${label}`
+      : "Nghỉ dưỡng wellness: home, villa, resort & retreat tuyển chọn",
     description: label
       ? `Danh sách home, villa, resort và retreat wellness tại Việt Nam theo ${label}. Xem mức dịch vụ, loại hình và giá tham khảo, để lại thông tin để được tư vấn.`
       : "Home, villa, resort và retreat wellness khắp Việt Nam đã qua bộ 100 tiêu chí tuyển chọn. Lọc theo loại hình, mức dịch vụ và vùng miền, xem giá tham khảo và nhận tư vấn.",
-    alternates: { canonical: "/luu-tru" },
+    alternates: { canonical: "/nghi-duong" },
     // Trang đã lọc không cần vào index, tránh trùng nội dung.
     robots: label ? { index: false, follow: true } : undefined,
   };
 }
 
-export default async function LuuTruPage({
+export default async function NghiDuongPage({
   searchParams,
 }: {
   searchParams: Promise<SearchParams>;
@@ -58,12 +58,13 @@ export default async function LuuTruPage({
         ...p.nganh,
         ...p.loaiHinh,
         ...p.highlights,
+        ...(p.tieuChuanWellness ?? []),
       ),
   );
 
   return (
     <>
-      <PageIntro eyebrow="Lưu trú" title="Nơi ở là điểm bắt đầu">
+      <PageIntro eyebrow="Nghỉ dưỡng" title="Nơi ở là điểm bắt đầu">
         <p>
           Mỗi home, villa, resort và retreat ở đây đều do chúng tôi đi khảo sát và chấm
           theo bộ 100 tiêu chí: chất lượng giấc ngủ, bếp, nguồn nước, cây bản
@@ -76,7 +77,7 @@ export default async function LuuTruPage({
         <Suspense fallback={<div className="h-40 rounded-card surface" />}>
           <FilterBar
             resultCount={list.length}
-            resultNoun="nơi lưu trú"
+            resultNoun="nơi nghỉ dưỡng"
             extras={[
               {
                 key: "region",
@@ -102,7 +103,7 @@ export default async function LuuTruPage({
             {list.map((p) => (
               <li key={p.id}>
                 <ItemCard
-                  href={`/luu-tru/${p.slug}`}
+                  href={`/nghi-duong/${p.slug}`}
                   image={p.images[0]}
                   icon={PROPERTY_TYPE_ICON[p.type]}
                   eyebrow={`${PROPERTY_TYPE_LABEL[p.type]} · ${p.region}`}
@@ -130,8 +131,8 @@ function EmptyState({ query }: { query?: string }) {
       <Icon aria-hidden size={28} strokeWidth={1.5} className="mx-auto text-ink-soft" />
       <h2 className="mt-3 text-xl">
         {query
-          ? `Không tìm thấy nơi lưu trú nào cho "${query}"`
-          : "Chưa có nơi lưu trú khớp bộ lọc này"}
+          ? `Không tìm thấy nơi nghỉ dưỡng nào cho "${query}"`
+          : "Chưa có nơi nghỉ dưỡng khớp bộ lọc này"}
       </h2>
       <p className="mx-auto mt-2 max-w-prose text-sm text-ink-soft">
         Mạng lưới đối tác đang mở rộng thêm mỗi tháng. Bạn thử từ khoá khác

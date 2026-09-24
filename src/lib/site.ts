@@ -8,7 +8,7 @@ export const SITE_TAGLINE =
   "Mạng lưới home, villa, resort và retreat wellness tại Việt Nam";
 
 export const SITE_DESCRIPTION =
-  "Wellnessvietnams tuyển chọn home, villa, resort và retreat wellness khắp Việt Nam theo y học phương đông, ẩm thực và thiên nhiên bản địa từng vùng miền, kết hợp cùng tiêu chuẩn nghỉ dưỡng thông thường. Xem lưu trú, chương trình và vé trải nghiệm, để lại thông tin để được tư vấn.";
+  "Wellnessvietnams tuyển chọn home, villa, resort và retreat wellness khắp Việt Nam theo y học phương đông, ẩm thực và thiên nhiên bản địa từng vùng miền, kết hợp cùng tiêu chuẩn nghỉ dưỡng thông thường. Xem nghỉ dưỡng, chương trình và vé trải nghiệm, để lại thông tin để được tư vấn.";
 
 export const CONTACT = {
   phone: "0909 000 000",
@@ -19,7 +19,7 @@ export const CONTACT = {
 };
 
 export const NAV = [
-  { href: "/luu-tru", label: "Lưu trú" },
+  { href: "/nghi-duong", label: "Nghỉ dưỡng" },
   { href: "/chuong-trinh", label: "Chương trình" },
   { href: "/trai-nghiem", label: "Trải nghiệm" },
   { href: "/kien-thuc", label: "Kiến thức" },

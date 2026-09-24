@@ -72,7 +72,7 @@ export default async function TraiNghiemPage({
       <PageIntro eyebrow="Trải nghiệm" title="Từng buổi một, không cần đi cả hành trình">
         <p>
           Vé lẻ cho một buổi trị liệu, một buổi coaching hay một buổi đi rừng.
-          Bạn có thể mua thêm khi đã ở tại nơi lưu trú đối tác, hoặc ghép vài
+          Bạn có thể mua thêm khi đã ở tại nơi nghỉ dưỡng đối tác, hoặc ghép vài
           buổi thành một kỳ nghỉ ngắn.
         </p>
       </PageIntro>

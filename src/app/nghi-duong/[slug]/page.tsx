@@ -33,15 +33,19 @@ export async function generateMetadata({
   if (!property) return {};
 
   const title = `${property.name} — ${PROPERTY_TYPE_LABEL[property.type]} wellness tại ${property.region}`;
+  const priceDescription =
+    property.giaThamKhao > 0
+      ? `từ ${formatPrice(property.giaThamKhao, property.giaUnit)}`
+      : "giá theo yêu cầu";
   const description = `${property.name}: ${property.loaiHinh.join(", ")} · ${
     MUC_META[property.mucCaoNhat].label
-  } · từ ${formatPrice(property.giaThamKhao, property.giaUnit)}. ${property.description.slice(0, 110)}…`;
+  } · ${priceDescription}. ${property.description.slice(0, 110)}…`;
 
   return {
     title,
     description,
-    alternates: { canonical: `/luu-tru/${property.slug}` },
-    openGraph: { title, description, url: `${SITE_URL}/luu-tru/${property.slug}` },
+    alternates: { canonical: `/nghi-duong/${property.slug}` },
+    openGraph: { title, description, url: `${SITE_URL}/nghi-duong/${property.slug}` },
   };
 }
 
@@ -63,6 +67,12 @@ export default async function PropertyDetail({
 
   const hasRooms = property.roomTypes.length > 0;
   const hasAmenities = property.tienIch.length > 0 || property.diemDenLanCan.length > 0;
+  const referenceSources = (property.nguonThamKhao ?? []).filter((source) =>
+    /^https?:\/\//i.test(source),
+  );
+  const hasWellnessStandards = Boolean(
+    property.tieuChuanWellness?.length || referenceSources.length,
+  );
   // Chỉ hiển thị thông tin — chưa có luồng thanh toán/QR thật (xem field
   // Property.thanhToan ở lib/types.ts). Tiền đi thẳng vào tài khoản của
   // property, không qua nền tảng.
@@ -91,6 +101,7 @@ export default async function PropertyDetail({
   // Thanh điều hướng nhanh trong trang — chỉ liệt kê mục thực sự tồn tại bên dưới.
   const sectionNav = [
     { id: "tong-quan", label: "Tổng quan" },
+    hasWellnessStandards ? { id: "tieu-chuan", label: "Căn cứ wellness" } : null,
     hasRooms ? { id: "hang-phong", label: "Hạng phòng" } : null,
     hasAmenities ? { id: "tien-ich", label: "Tiện ích & vị trí" } : null,
     relatedPrograms.length > 0 ? { id: "chuong-trinh", label: "Chương trình" } : null,
@@ -130,7 +141,7 @@ export default async function PropertyDetail({
       addressRegion: property.region,
       addressCountry: "VN",
     },
-    url: `${SITE_URL}/luu-tru/${property.slug}`,
+    url: `${SITE_URL}/nghi-duong/${property.slug}`,
     priceRange: formatPrice(property.giaThamKhao, property.giaUnit),
     amenityFeature: property.tienIch.map((t) => ({
       "@type": "LocationFeatureSpecification",
@@ -146,7 +157,7 @@ export default async function PropertyDetail({
           <Breadcrumbs
             items={[
               { href: "/", label: "Trang chủ" },
-              { href: "/luu-tru", label: "Lưu trú" },
+              { href: "/nghi-duong", label: "Nghỉ dưỡng" },
               { label: property.name },
             ]}
           />
@@ -267,6 +278,56 @@ export default async function PropertyDetail({
                 ))}
               </ul>
             </section>
+
+            {hasWellnessStandards && (
+              <section id="tieu-chuan" className="mt-10 scroll-mt-28">
+                <h2 className="text-2xl">Căn cứ tuyển chọn wellness</h2>
+                <div className="mt-4 rounded-card border border-line bg-card p-5">
+                  <p className="text-sm text-ink-soft">
+                    {property.daXacMinhDoiTac
+                      ? "Nội dung đã được đơn vị xác nhận."
+                      : "Dữ liệu được đối chiếu từ nguồn công khai; chưa được đơn vị xác nhận để mở bán."}
+                    {property.ngayXacMinh && ` Cập nhật ngày ${property.ngayXacMinh}.`}
+                  </p>
+
+                  {property.tieuChuanWellness && property.tieuChuanWellness.length > 0 && (
+                    <ul className="mt-4 grid gap-2.5">
+                      {property.tieuChuanWellness.map((standard) => (
+                        <li key={standard} className="flex items-start gap-2 text-sm text-ink-soft">
+                          <CheckCircle2
+                            aria-hidden
+                            size={15}
+                            strokeWidth={2}
+                            className="mt-0.5 shrink-0 text-moss"
+                          />
+                          <span>{standard}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {referenceSources.length > 0 && (
+                    <div className="mt-5 border-t border-line pt-4">
+                      <p className="eyebrow">Nguồn tham khảo</p>
+                      <ul className="mt-2 flex flex-wrap gap-2">
+                        {referenceSources.map((source, index) => (
+                          <li key={source}>
+                            <a
+                              href={source}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex rounded-full border border-line px-3 py-1.5 text-xs font-medium text-ink-soft transition hover:border-ink-soft hover:text-ink"
+                            >
+                              Nguồn {index + 1} ↗
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
 
             {hasRooms && (
               <section id="hang-phong" className="mt-10 scroll-mt-28">
